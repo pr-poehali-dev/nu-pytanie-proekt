@@ -156,7 +156,7 @@ const Index = () => {
               <div>
                 <h2 className="text-6xl lg:text-7xl font-light leading-[1.1] text-champagne mb-6">
                   <span className="relative inline-block">
-                    Ваше событие.
+                    Ваше событие —
                     <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-gradient-to-r from-gold via-champagne to-transparent"></span>
                   </span>
                   <br />
