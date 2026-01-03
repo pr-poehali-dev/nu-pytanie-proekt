@@ -44,28 +44,28 @@ const Index = () => {
       title: 'Свадьба на берегу моря',
       location: 'Сочи',
       guests: 120,
-      image: '🌊',
+      image: 'https://cdn.poehali.dev/projects/de9015d2-43e5-4979-bf59-270d4334d15d/files/7dfd9622-034e-41ba-9ee1-5873cbaace8c.jpg',
       description: 'Роскошная церемония с панорамным видом на закат'
     },
     {
       title: 'Корпоратив премиум-класса',
       location: 'Москва',
       guests: 250,
-      image: '🏙️',
+      image: 'https://cdn.poehali.dev/projects/de9015d2-43e5-4979-bf59-270d4334d15d/files/b7b648fd-f54f-487f-b94a-5b6d5ecad179.jpg',
       description: 'Стильное мероприятие в центре столицы'
     },
     {
       title: 'Юбилей в усадьбе',
       location: 'Санкт-Петербург',
       guests: 80,
-      image: '🏰',
+      image: 'https://cdn.poehali.dev/projects/de9015d2-43e5-4979-bf59-270d4334d15d/files/16676814-acdc-4d68-ac49-4f273e16c44d.jpg',
       description: 'Камерное торжество в исторической локации'
     },
     {
       title: 'Свадьба в горах',
       location: 'Крым',
       guests: 60,
-      image: '⛰️',
+      image: 'https://cdn.poehali.dev/projects/de9015d2-43e5-4979-bf59-270d4334d15d/files/c16418a8-e802-4ecf-8d93-d9eb83527d58.jpg',
       description: 'Уникальная выездная церемония на высоте'
     }
   ];
@@ -209,8 +209,12 @@ const Index = () => {
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <CardContent className="p-0">
-                  <div className="h-48 bg-muted flex items-center justify-center text-7xl group-hover:scale-110 transition-transform">
-                    {caseItem.image}
+                  <div className="h-48 bg-muted overflow-hidden">
+                    <img 
+                      src={caseItem.image} 
+                      alt={caseItem.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
                   </div>
                   <div className="p-6">
                     <h4 className="text-xl font-bold mb-2 group-hover:text-gold transition-colors">
