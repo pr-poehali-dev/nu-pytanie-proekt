@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -40,6 +41,7 @@ const Index = () => {
 
   const cases = [
     {
+      id: 'sochi-wedding',
       title: 'Свадьба на берегу моря',
       location: 'Сочи',
       guests: 120,
@@ -47,6 +49,7 @@ const Index = () => {
       description: 'Роскошная церемония с панорамным видом на закат'
     },
     {
+      id: 'moscow-corporate',
       title: 'Корпоратив премиум-класса',
       location: 'Москва',
       guests: 250,
@@ -54,6 +57,7 @@ const Index = () => {
       description: 'Стильное мероприятие в центре столицы'
     },
     {
+      id: 'spb-anniversary',
       title: 'Юбилей в усадьбе',
       location: 'Санкт-Петербург',
       guests: 80,
@@ -61,6 +65,7 @@ const Index = () => {
       description: 'Камерное торжество в исторической локации'
     },
     {
+      id: 'crimea-mountain',
       title: 'Свадьба в горах',
       location: 'Крым',
       guests: 60,
@@ -111,23 +116,35 @@ const Index = () => {
 
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-20 right-20 w-[600px] h-[600px] bg-gold/5 rounded-full blur-[120px]"></div>
-          <div className="absolute bottom-20 left-20 w-[400px] h-[400px] bg-champagne/5 rounded-full blur-[100px]"></div>
+          <div className="absolute top-20 right-20 w-[600px] h-[600px] bg-gold/5 rounded-full blur-[120px] animate-float"></div>
+          <div className="absolute bottom-20 left-20 w-[400px] h-[400px] bg-champagne/5 rounded-full blur-[100px] animate-float" style={{animationDelay: '2s'}}></div>
+          <div className="absolute top-1/2 left-1/2 w-[300px] h-[300px] bg-gold/3 rounded-full blur-[100px] animate-float" style={{animationDelay: '4s'}}></div>
         </div>
         
         <div className="max-w-[1400px] mx-auto px-8 relative z-10 pt-32 pb-20">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8 animate-fade-in">
               <div className="inline-block">
-                <div className="px-4 py-2 border border-gold/30 rounded-full mb-6">
+                <div className="px-4 py-2 border border-gold/30 rounded-full mb-6 shimmer-effect animate-glow-pulse">
                   <p className="text-xs tracking-[0.3em] text-champagne uppercase">С 2026 года</p>
                 </div>
               </div>
               
-              <h2 className="text-7xl lg:text-8xl font-light leading-[0.95] text-champagne">
-                Ваше событие.<br />
-                <span className="text-gold font-normal">Моя</span><br />
-                <span className="text-gold font-normal">ответственность</span>
+              <h2 className="text-7xl lg:text-8xl font-light leading-[0.95] text-champagne relative">
+                <span className="relative inline-block">
+                  Ваше событие.
+                  <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-gradient-to-r from-gold via-champagne to-transparent"></span>
+                </span>
+                <br />
+                <span className="text-gold font-normal relative inline-block">
+                  Моя
+                  <span className="absolute inset-0 blur-xl bg-gold/20"></span>
+                </span>
+                <br />
+                <span className="text-gold font-normal relative inline-block">
+                  ответственность
+                  <span className="absolute inset-0 blur-xl bg-gold/20"></span>
+                </span>
               </h2>
               
               <p className="text-xl text-champagne/70 max-w-xl leading-relaxed font-light">
@@ -150,7 +167,7 @@ const Index = () => {
 
               <div className="flex gap-12 pt-8 border-t border-gold/10">
                 <div>
-                  <p className="text-4xl font-light text-gold mb-1">100+</p>
+                  <p className="text-4xl font-light text-gold mb-1">15+</p>
                   <p className="text-sm text-champagne/60 tracking-wide">Событий</p>
                 </div>
                 <div>
@@ -158,20 +175,23 @@ const Index = () => {
                   <p className="text-sm text-champagne/60 tracking-wide">Городов</p>
                 </div>
                 <div>
-                  <p className="text-4xl font-light text-gold mb-1">5</p>
-                  <p className="text-sm text-champagne/60 tracking-wide">Лет опыта</p>
+                  <p className="text-4xl font-light text-gold mb-1">2026</p>
+                  <p className="text-sm text-champagne/60 tracking-wide">Старт бренда</p>
                 </div>
               </div>
             </div>
 
             <div className="relative animate-slide-up hidden lg:block">
               <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-r from-gold/20 to-champagne/20 rounded-2xl blur-2xl"></div>
+                <div className="absolute -inset-8 bg-gradient-to-r from-gold/30 via-champagne/20 to-gold/30 rounded-3xl blur-3xl animate-pulse"></div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-gold/10 to-transparent rounded-3xl"></div>
                 <img 
-                  src="https://cdn.poehali.dev/projects/de9015d2-43e5-4979-bf59-270d4334d15d/files/3d103a85-3bd9-491d-bd09-88ebc19d20a6.jpg"
+                  src="https://cdn.poehali.dev/files/IMG_5780.PNG"
                   alt="Марина Малиночка"
-                  className="relative rounded-2xl w-full h-[600px] object-cover shadow-2xl"
+                  className="relative rounded-3xl w-full h-[650px] object-cover shadow-2xl border-2 border-gold/20"
                 />
+                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gold/20 rounded-full blur-2xl"></div>
+                <div className="absolute -top-6 -left-6 w-24 h-24 bg-champagne/20 rounded-full blur-2xl"></div>
               </div>
             </div>
           </div>
@@ -200,7 +220,7 @@ const Index = () => {
             </h3>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-12 mb-20">
+          <div className="grid lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2 space-y-6 text-lg text-champagne/80 leading-relaxed font-light">
               <p>
                 С 2026 года я реализую себя как независимый организатор премиум-событий. 
@@ -219,7 +239,7 @@ const Index = () => {
               </p>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-6 flex flex-col">
               <div className="p-6 bg-muted/30 border border-gold/20 rounded-xl">
                 <Icon name="Sparkles" size={28} className="text-gold mb-3" />
                 <h4 className="text-xl font-normal mb-2 text-champagne">Уникальность</h4>
@@ -260,9 +280,10 @@ const Index = () => {
 
           <div className="grid md:grid-cols-2 gap-8">
             {cases.map((caseItem, index) => (
-              <div 
+              <Link 
+                to={`/case/${caseItem.id}`}
                 key={index}
-                className="group cursor-pointer animate-fade-in"
+                className="group cursor-pointer animate-fade-in block"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
                 <div className="relative overflow-hidden rounded-2xl mb-6">
@@ -283,15 +304,16 @@ const Index = () => {
                         {caseItem.guests} гостей
                       </span>
                     </div>
-                    <h4 className="text-3xl font-light text-champagne mb-2 group-hover:text-gold transition-colors">
+                    <h4 className="text-3xl font-light text-champagne mb-2 group-hover:text-gold transition-colors flex items-center gap-2">
                       {caseItem.title}
+                      <Icon name="ArrowRight" size={24} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                     </h4>
                     <p className="text-champagne/70 text-sm">
                       {caseItem.description}
                     </p>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
