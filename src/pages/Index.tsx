@@ -74,6 +74,29 @@ const Index = () => {
     }
   ];
 
+  const services = [
+    {
+      icon: 'Sparkles',
+      title: 'Полная организация',
+      description: 'От первой идеи до последнего гостя — я беру всё на себя. Вы просто наслаждаетесь событием.'
+    },
+    {
+      icon: 'Users',
+      title: 'Частичная координация',
+      description: 'Уже начали подготовку? Подключусь на любом этапе и доведу до идеала.'
+    },
+    {
+      icon: 'Shield',
+      title: 'Управление подрядчиками',
+      description: 'Веду переговоры, защищаю ваш бюджет, контролирую качество работы каждого.'
+    },
+    {
+      icon: 'MapPin',
+      title: 'Работа в любом городе',
+      description: 'Москва, Питер, Сочи, Крым — у меня есть проверенные контакты везде.'
+    }
+  ];
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', { ...formData, date });
@@ -81,32 +104,32 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-black text-foreground overflow-x-hidden">
-      <nav className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-xl border-b border-gold/10">
-        <div className="max-w-[1400px] mx-auto px-8 py-5 flex justify-between items-center">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-gold to-champagne rounded-full flex items-center justify-center">
+      <nav className="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-xl border-b border-gold/10">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-5 flex justify-between items-center">
+          <Link to="/" className="flex items-center gap-3">
+            <div className="w-12 h-12 bg-gradient-to-br from-gold to-champagne rounded-full flex items-center justify-center">
               <span className="text-black font-bold text-xl">М</span>
             </div>
             <div>
               <h1 className="text-xl font-bold text-gold tracking-wide">Marico Events</h1>
               <p className="text-[10px] text-champagne/60 tracking-widest uppercase">Марина Малиночка</p>
             </div>
-          </div>
-          <div className="hidden lg:flex gap-12 items-center">
-            <a href="#about" className="text-sm tracking-wide hover:text-gold transition-all relative group">
-              О Марине
+          </Link>
+          <div className="hidden lg:flex gap-10 items-center">
+            <a href="#services" className="text-sm tracking-wide hover:text-gold transition-all relative group">
+              Услуги
+              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gold transition-all group-hover:w-full"></span>
+            </a>
+            <a href="#how" className="text-sm tracking-wide hover:text-gold transition-all relative group">
+              Как работаю
               <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gold transition-all group-hover:w-full"></span>
             </a>
             <a href="#cases" className="text-sm tracking-wide hover:text-gold transition-all relative group">
               Портфолио
               <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gold transition-all group-hover:w-full"></span>
             </a>
-            <a href="#testimonials" className="text-sm tracking-wide hover:text-gold transition-all relative group">
-              Отзывы
-              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gold transition-all group-hover:w-full"></span>
-            </a>
             <a href="#contact">
-              <Button className="bg-gold text-black hover:bg-champagne transition-all tracking-wide">
+              <Button className="bg-gold text-black hover:bg-champagne transition-all tracking-wide px-6">
                 Обсудить проект
               </Button>
             </a>
@@ -121,68 +144,65 @@ const Index = () => {
           <div className="absolute top-1/2 left-1/2 w-[300px] h-[300px] bg-gold/3 rounded-full blur-[100px] animate-float" style={{animationDelay: '4s'}}></div>
         </div>
         
-        <div className="max-w-[1400px] mx-auto px-8 relative z-10 pt-32 pb-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 pt-32 pb-24">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8 animate-fade-in">
+            <div className="space-y-10 animate-fade-in">
               <div className="inline-block">
-                <div className="px-4 py-2 border border-gold/30 rounded-full mb-6 shimmer-effect animate-glow-pulse">
-                  <p className="text-xs tracking-[0.3em] text-champagne uppercase">С 2026 года</p>
+                <div className="px-5 py-2 border border-gold/30 rounded-full shimmer-effect animate-glow-pulse">
+                  <p className="text-xs tracking-[0.3em] text-champagne uppercase">С 2026 года — мой бренд</p>
                 </div>
               </div>
               
-              <h2 className="text-7xl lg:text-8xl font-light leading-[0.95] text-champagne relative">
-                <span className="relative inline-block">
-                  Ваше событие.
-                  <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-gradient-to-r from-gold via-champagne to-transparent"></span>
-                </span>
-                <br />
-                <span className="text-gold font-normal relative inline-block">
-                  Моя
-                  <span className="absolute inset-0 blur-xl bg-gold/20"></span>
-                </span>
-                <br />
-                <span className="text-gold font-normal relative inline-block">
-                  ответственность
-                  <span className="absolute inset-0 blur-xl bg-gold/20"></span>
-                </span>
-              </h2>
+              <div>
+                <h2 className="text-6xl lg:text-7xl font-light leading-[1.1] text-champagne mb-6">
+                  <span className="relative inline-block">
+                    Ваше событие.
+                    <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-gradient-to-r from-gold via-champagne to-transparent"></span>
+                  </span>
+                  <br />
+                  <span className="text-gold font-normal relative inline-block">
+                    Моя ответственность
+                    <span className="absolute inset-0 blur-2xl bg-gold/20"></span>
+                  </span>
+                </h2>
+                
+                <p className="text-xl text-champagne/80 max-w-xl leading-relaxed">
+                  Организую премиум-события <span className="text-gold">от идеи до реализации</span>. 
+                  Всегда на вашей стороне — защищаю интересы, контролирую бюджет, создаю безупречные мероприятия.
+                </p>
+              </div>
               
-              <p className="text-xl text-champagne/70 max-w-xl leading-relaxed font-light">
-                Премиум-организация событий любого масштаба.<br />
-                От Москвы до Крыма. Всегда на вашей стороне.
-              </p>
-              
-              <div className="flex gap-4 pt-4">
+              <div className="flex gap-4">
                 <a href="#contact">
-                  <Button size="lg" className="bg-gold text-black hover:bg-champagne text-base px-8 tracking-wide">
+                  <Button size="lg" className="bg-gold text-black hover:bg-champagne text-base px-8 h-14">
                     Начать диалог
                   </Button>
                 </a>
-                <a href="#cases">
-                  <Button size="lg" variant="outline" className="border-gold/30 text-champagne hover:bg-gold/5 text-base px-8 tracking-wide">
-                    Портфолио
+                <a href="#services">
+                  <Button size="lg" variant="outline" className="border-gold/30 text-champagne hover:bg-gold/5 text-base px-8 h-14">
+                    Мои услуги
                   </Button>
                 </a>
               </div>
 
-              <div className="flex gap-12 pt-8 border-t border-gold/10">
+              <div className="grid grid-cols-3 gap-8 pt-8 border-t border-gold/10">
                 <div>
-                  <p className="text-4xl font-light text-gold mb-1">15+</p>
-                  <p className="text-sm text-champagne/60 tracking-wide">Событий</p>
+                  <p className="text-4xl font-light text-gold mb-2">15+</p>
+                  <p className="text-sm text-champagne/60">Реализованных событий</p>
                 </div>
                 <div>
-                  <p className="text-4xl font-light text-gold mb-1">7</p>
-                  <p className="text-sm text-champagne/60 tracking-wide">Городов</p>
+                  <p className="text-4xl font-light text-gold mb-2">7</p>
+                  <p className="text-sm text-champagne/60">Городов России</p>
                 </div>
                 <div>
-                  <p className="text-4xl font-light text-gold mb-1">2026</p>
-                  <p className="text-sm text-champagne/60 tracking-wide">Старт бренда</p>
+                  <p className="text-4xl font-light text-gold mb-2">100%</p>
+                  <p className="text-sm text-champagne/60">Довольных клиентов</p>
                 </div>
               </div>
             </div>
 
             <div className="relative animate-slide-up hidden lg:block">
-              <div className="relative">
+              <div className="relative mx-auto max-w-md">
                 <div className="absolute -inset-8 bg-gradient-to-r from-gold/30 via-champagne/20 to-gold/30 rounded-3xl blur-3xl animate-pulse"></div>
                 <div className="absolute inset-0 bg-gradient-to-tr from-gold/10 to-transparent rounded-3xl"></div>
                 <img 
@@ -200,82 +220,114 @@ const Index = () => {
         <div className="absolute bottom-0 left-0 right-0 overflow-hidden py-6 border-t border-gold/10">
           <div className="flex animate-marquee">
             <span className="text-gold/20 text-2xl mx-12 whitespace-nowrap">✦ ПРЕМИУМ СОБЫТИЯ</span>
-            <span className="text-gold/20 text-2xl mx-12 whitespace-nowrap">✦ БЕЗУПРЕЧНЫЙ СЕРВИС</span>
             <span className="text-gold/20 text-2xl mx-12 whitespace-nowrap">✦ ВСЕГДА НА ВАШЕЙ СТОРОНЕ</span>
             <span className="text-gold/20 text-2xl mx-12 whitespace-nowrap">✦ ОТ ИДЕИ ДО РЕАЛИЗАЦИИ</span>
+            <span className="text-gold/20 text-2xl mx-12 whitespace-nowrap">✦ ЗАЩИТА ВАШИХ ИНТЕРЕСОВ</span>
             <span className="text-gold/20 text-2xl mx-12 whitespace-nowrap">✦ ПРЕМИУМ СОБЫТИЯ</span>
-            <span className="text-gold/20 text-2xl mx-12 whitespace-nowrap">✦ БЕЗУПРЕЧНЫЙ СЕРВИС</span>
             <span className="text-gold/20 text-2xl mx-12 whitespace-nowrap">✦ ВСЕГДА НА ВАШЕЙ СТОРОНЕ</span>
             <span className="text-gold/20 text-2xl mx-12 whitespace-nowrap">✦ ОТ ИДЕИ ДО РЕАЛИЗАЦИИ</span>
+            <span className="text-gold/20 text-2xl mx-12 whitespace-nowrap">✦ ЗАЩИТА ВАШИХ ИНТЕРЕСОВ</span>
           </div>
         </div>
       </section>
 
-      <section id="about" className="py-32 px-8 bg-gradient-to-b from-black to-muted/20">
-        <div className="max-w-[1200px] mx-auto">
-          <div className="mb-20 animate-fade-in">
-            <p className="text-gold text-sm tracking-[0.3em] uppercase mb-4">Обо мне</p>
-            <h3 className="text-6xl font-light text-champagne mb-6">
-              Марина <span className="text-gold">Малиночка</span>
+      <section id="services" className="py-24 px-6 lg:px-12 bg-gradient-to-b from-black to-muted/20">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20 animate-fade-in max-w-3xl mx-auto">
+            <p className="text-gold text-sm tracking-[0.3em] uppercase mb-4">Для кого я работаю</p>
+            <h3 className="text-5xl lg:text-6xl font-light text-champagne mb-6">
+              Для тех, кто <span className="text-gold">ценит время</span> и <span className="text-gold">качество</span>
+            </h3>
+            <p className="text-xl text-champagne/70">
+              Вы хотите безупречное событие, но не хотите погружаться в рутину? Я — ваше решение.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+            {services.map((service, index) => (
+              <div 
+                key={index}
+                className="p-8 bg-muted/30 border border-gold/20 rounded-2xl hover:border-gold/50 transition-all animate-fade-in hover:transform hover:scale-105"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <div className="w-14 h-14 bg-gold/10 rounded-xl flex items-center justify-center mb-6">
+                  <Icon name={service.icon} size={28} className="text-gold" />
+                </div>
+                <h4 className="text-xl font-normal mb-3 text-champagne">{service.title}</h4>
+                <p className="text-sm text-champagne/70 leading-relaxed">{service.description}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-gradient-to-r from-gold/10 via-champagne/5 to-gold/10 border border-gold/30 rounded-3xl p-12 text-center">
+            <h4 className="text-3xl font-light text-champagne mb-4">
+              Почему выбирают меня?
+            </h4>
+            <p className="text-xl text-champagne/80 max-w-3xl mx-auto leading-relaxed">
+              Я не просто организатор — я <span className="text-gold font-normal">ваш адвокат</span> в мире event-индустрии. 
+              Защищаю ваш бюджет в переговорах, контролирую каждого подрядчика, решаю проблемы до того, 
+              как вы о них узнаете. Вы получаете не стресс, а <span className="text-gold font-normal">удовольствие от процесса</span>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="how" className="py-24 px-6 lg:px-12">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20 animate-fade-in max-w-3xl mx-auto">
+            <p className="text-gold text-sm tracking-[0.3em] uppercase mb-4">Как я работаю</p>
+            <h3 className="text-5xl lg:text-6xl font-light text-champagne mb-6">
+              Прозрачный <span className="text-gold">процесс</span> от А до Я
             </h3>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-12">
-            <div className="lg:col-span-2 space-y-6 text-lg text-champagne/80 leading-relaxed font-light">
-              <p>
-                С 2026 года я реализую себя как независимый организатор премиум-событий. 
-                До этого многие годы работала на крупные агентства, набираясь опыта и создавая 
-                безупречные мероприятия для самых требовательных клиентов.
-              </p>
-              <p>
-                Теперь моя миссия — <span className="text-gold">быть всегда на стороне клиента</span>. 
-                Я беру на себя сложную рутинную работу, координирую процессы или полностью 
-                организую событие с нуля. Подключаюсь на любом этапе — от идеи до финальной реализации.
-              </p>
-              <p>
-                География моей работы простирается от Москвы и Санкт-Петербурга до Крыма и Сочи. 
-                Я знаю лучшие локации, проверенных подрядчиков и все тонкости организации 
-                мероприятий любого масштаба.
-              </p>
-            </div>
-
-            <div className="space-y-6 flex flex-col">
-              <div className="p-6 bg-muted/30 border border-gold/20 rounded-xl">
-                <Icon name="Sparkles" size={28} className="text-gold mb-3" />
-                <h4 className="text-xl font-normal mb-2 text-champagne">Уникальность</h4>
-                <p className="text-sm text-champagne/70 leading-relaxed">
-                  Каждое событие — уникальная история, созданная специально для вас
-                </p>
+          <div className="grid lg:grid-cols-3 gap-8">
+            {[
+              {
+                step: '01',
+                title: 'Знакомство и концепция',
+                description: 'Созваниваемся, обсуждаем ваше событие, бюджет и ожидания. Я предлагаю идеи и формирую концепцию.'
+              },
+              {
+                step: '02',
+                title: 'Подбор и контроль',
+                description: 'Нахожу лучшие локации и подрядчиков. Веду переговоры, защищаю ваш бюджет, заключаю договоры.'
+              },
+              {
+                step: '03',
+                title: 'Реализация мечты',
+                description: 'Координирую всех в день Х, решаю форс-мажоры. Вы наслаждаетесь событием, я контролирую процесс.'
+              }
+            ].map((item, index) => (
+              <div 
+                key={index}
+                className="relative p-10 bg-muted/30 border border-gold/20 rounded-2xl animate-fade-in"
+                style={{ animationDelay: `${index * 150}ms` }}
+              >
+                <div className="text-8xl font-light text-gold/10 absolute top-4 right-6">{item.step}</div>
+                <div className="relative z-10">
+                  <div className="w-12 h-12 bg-gold rounded-full flex items-center justify-center mb-6 text-black font-bold text-xl">
+                    {item.step}
+                  </div>
+                  <h4 className="text-2xl font-normal mb-4 text-champagne">{item.title}</h4>
+                  <p className="text-champagne/70 leading-relaxed">{item.description}</p>
+                </div>
               </div>
-
-              <div className="p-6 bg-muted/30 border border-gold/20 rounded-xl">
-                <Icon name="Shield" size={28} className="text-gold mb-3" />
-                <h4 className="text-xl font-normal mb-2 text-champagne">Ваш адвокат</h4>
-                <p className="text-sm text-champagne/70 leading-relaxed">
-                  Защищаю ваши интересы в переговорах с подрядчиками
-                </p>
-              </div>
-
-              <div className="p-6 bg-muted/30 border border-gold/20 rounded-xl">
-                <Icon name="Settings" size={28} className="text-gold mb-3" />
-                <h4 className="text-xl font-normal mb-2 text-champagne">Гибкость</h4>
-                <p className="text-sm text-champagne/70 leading-relaxed">
-                  Подключаюсь на любом этапе вашего события
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section id="cases" className="py-32 px-8">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="mb-20 text-center animate-fade-in">
+      <section id="cases" className="py-24 px-6 lg:px-12 bg-gradient-to-b from-black to-muted/20">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20 animate-fade-in max-w-3xl mx-auto">
             <p className="text-gold text-sm tracking-[0.3em] uppercase mb-4">Портфолио</p>
-            <h3 className="text-6xl font-light text-champagne mb-4">
-              Истории событий
+            <h3 className="text-5xl lg:text-6xl font-light text-champagne mb-6">
+              Истории <span className="text-gold">успешных</span> событий
             </h3>
-            <p className="text-xl text-champagne/60">Каждое мероприятие — это уникальный опыт</p>
+            <p className="text-xl text-champagne/70">
+              Каждый проект — это уникальная история с вызовами и триумфом
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -286,15 +338,15 @@ const Index = () => {
                 className="group cursor-pointer animate-fade-in block"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
-                <div className="relative overflow-hidden rounded-2xl mb-6">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                <div className="relative overflow-hidden rounded-3xl">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent z-10 opacity-70 group-hover:opacity-50 transition-all"></div>
                   <img 
                     src={caseItem.image}
                     alt={caseItem.title}
                     className="w-full h-[500px] object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute bottom-0 left-0 right-0 p-8 z-20">
-                    <div className="flex items-center gap-4 mb-3 text-sm">
+                    <div className="flex items-center gap-4 mb-4 text-sm">
                       <span className="flex items-center gap-1 text-gold">
                         <Icon name="MapPin" size={14} />
                         {caseItem.location}
@@ -304,11 +356,11 @@ const Index = () => {
                         {caseItem.guests} гостей
                       </span>
                     </div>
-                    <h4 className="text-3xl font-light text-champagne mb-2 group-hover:text-gold transition-colors flex items-center gap-2">
+                    <h4 className="text-3xl font-light text-champagne mb-3 group-hover:text-gold transition-colors flex items-center gap-3">
                       {caseItem.title}
-                      <Icon name="ArrowRight" size={24} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <Icon name="ArrowRight" size={24} className="opacity-0 group-hover:opacity-100 transition-all transform group-hover:translate-x-2" />
                     </h4>
-                    <p className="text-champagne/70 text-sm">
+                    <p className="text-champagne/70">
                       {caseItem.description}
                     </p>
                   </div>
@@ -319,25 +371,28 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="testimonials" className="py-32 px-8 bg-gradient-to-b from-black to-muted/20">
-        <div className="max-w-[1200px] mx-auto">
-          <div className="mb-20 text-center animate-fade-in">
+      <section id="testimonials" className="py-24 px-6 lg:px-12">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20 animate-fade-in max-w-3xl mx-auto">
             <p className="text-gold text-sm tracking-[0.3em] uppercase mb-4">Отзывы</p>
-            <h3 className="text-6xl font-light text-champagne mb-4">
-              Что говорят клиенты
+            <h3 className="text-5xl lg:text-6xl font-light text-champagne mb-6">
+              Что говорят <span className="text-gold">клиенты</span>
             </h3>
+            <p className="text-xl text-champagne/70">
+              Доверие — главная валюта в моей работе
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <div 
                 key={index}
-                className="p-8 bg-muted/30 border border-gold/20 rounded-2xl animate-slide-up hover:border-gold/40 transition-all"
+                className="p-8 bg-muted/30 border border-gold/20 rounded-2xl animate-fade-in hover:border-gold/40 transition-all"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
                 <div className="flex gap-1 mb-6">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Icon key={i} name="Star" size={16} className="text-gold fill-gold" />
+                    <Icon key={i} name="Star" size={18} className="text-gold fill-gold" />
                   ))}
                 </div>
                 <p className="text-champagne/80 mb-8 italic leading-relaxed text-lg">
@@ -353,23 +408,23 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="contact" className="py-32 px-8">
-        <div className="max-w-[800px] mx-auto">
+      <section id="contact" className="py-24 px-6 lg:px-12 bg-gradient-to-b from-black to-muted/20">
+        <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
             <p className="text-gold text-sm tracking-[0.3em] uppercase mb-4">Контакты</p>
-            <h3 className="text-6xl font-light text-champagne mb-4">
-              Начнём диалог
+            <h3 className="text-5xl lg:text-6xl font-light text-champagne mb-6">
+              Давайте <span className="text-gold">обсудим</span> ваше событие
             </h3>
-            <p className="text-xl text-champagne/60">
+            <p className="text-xl text-champagne/70">
               Заполните форму — я свяжусь с вами в течение 24 часов
             </p>
           </div>
 
-          <div className="p-10 bg-muted/30 border border-gold/20 rounded-2xl animate-slide-up">
+          <div className="p-10 lg:p-12 bg-muted/30 border border-gold/20 rounded-3xl animate-slide-up">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-light mb-3 text-champagne tracking-wide">Ваше имя</label>
+                  <label className="block text-sm font-light mb-3 text-champagne">Ваше имя *</label>
                   <Input 
                     placeholder="Как к вам обращаться?"
                     value={formData.name}
@@ -379,7 +434,7 @@ const Index = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-light mb-3 text-champagne tracking-wide">Email</label>
+                  <label className="block text-sm font-light mb-3 text-champagne">Email *</label>
                   <Input 
                     type="email"
                     placeholder="your@email.com"
@@ -392,7 +447,7 @@ const Index = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-light mb-3 text-champagne tracking-wide">Телефон</label>
+                <label className="block text-sm font-light mb-3 text-champagne">Телефон *</label>
                 <Input 
                   type="tel"
                   placeholder="+7 (___) ___-__-__"
@@ -404,7 +459,7 @@ const Index = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-light mb-3 text-champagne tracking-wide">Дата события (ориентировочно)</label>
+                <label className="block text-sm font-light mb-3 text-champagne">Дата события (ориентировочно)</label>
                 <Popover>
                   <PopoverTrigger asChild>
                     <Button
@@ -428,7 +483,7 @@ const Index = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-light mb-3 text-champagne tracking-wide">Расскажите о событии</label>
+                <label className="block text-sm font-light mb-3 text-champagne">Расскажите о событии *</label>
                 <Textarea 
                   placeholder="Какое событие планируете? Сколько гостей? Какая помощь нужна?"
                   value={formData.message}
@@ -441,25 +496,29 @@ const Index = () => {
               <Button 
                 type="submit" 
                 size="lg" 
-                className="w-full bg-gold text-black hover:bg-champagne text-base h-14 tracking-wide"
+                className="w-full bg-gold text-black hover:bg-champagne text-base h-14 tracking-wide font-medium"
               >
                 Отправить запрос
               </Button>
+              
+              <p className="text-xs text-center text-champagne/50">
+                Нажимая кнопку, вы соглашаетесь на обработку персональных данных
+              </p>
             </form>
           </div>
         </div>
       </section>
 
-      <footer className="border-t border-gold/10 py-16 px-8">
-        <div className="max-w-[1400px] mx-auto">
+      <footer className="border-t border-gold/10 py-16 px-6 lg:px-12">
+        <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div className="md:col-span-2">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-gold to-champagne rounded-full flex items-center justify-center">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 bg-gradient-to-br from-gold to-champagne rounded-full flex items-center justify-center">
                   <span className="text-black font-bold text-xl">М</span>
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-gold tracking-wide">Marico Events</h4>
+                  <h4 className="text-xl font-bold text-gold">Marico Events</h4>
                   <p className="text-[10px] text-champagne/60 tracking-widest uppercase">Марина Малиночка</p>
                 </div>
               </div>
@@ -489,24 +548,21 @@ const Index = () => {
                 Санкт-Петербург<br />
                 Сочи<br />
                 Крым<br />
-                По всей России
+                Вся Россия
               </p>
             </div>
           </div>
 
           <div className="border-t border-gold/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-champagne/40">
-              © 2026 Marico Events. Марина Малиночка
+              © 2026 Marico Events. Марина Малиночка — Организация премиум-событий
             </p>
             <div className="flex gap-6">
               <a href="#" className="text-champagne/40 hover:text-gold transition-colors">
-                <Icon name="Instagram" size={18} />
+                <Icon name="Instagram" size={20} />
               </a>
               <a href="#" className="text-champagne/40 hover:text-gold transition-colors">
-                <Icon name="Facebook" size={18} />
-              </a>
-              <a href="#" className="text-champagne/40 hover:text-gold transition-colors">
-                <Icon name="Send" size={18} />
+                <Icon name="Send" size={20} />
               </a>
             </div>
           </div>
