@@ -711,6 +711,44 @@ const Index = () => {
                 Отправить заявку
               </Button>
             </form>
+
+            <div className="mt-8 pt-8 border-t border-gold/20">
+              <p className="text-center text-champagne/60 text-sm mb-6">Или свяжитесь со мной напрямую:</p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <a 
+                  href="https://wa.me/79182858216" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center gap-2 p-4 bg-black/30 border border-gold/20 rounded-xl hover:border-gold/50 transition-all group"
+                >
+                  <Icon name="MessageCircle" size={24} className="text-gold group-hover:scale-110 transition-transform" />
+                  <span className="text-xs text-champagne/80">WhatsApp</span>
+                </a>
+                <a 
+                  href="https://t.me/marico_event" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center gap-2 p-4 bg-black/30 border border-gold/20 rounded-xl hover:border-gold/50 transition-all group"
+                >
+                  <Icon name="Send" size={24} className="text-gold group-hover:scale-110 transition-transform" />
+                  <span className="text-xs text-champagne/80">Telegram</span>
+                </a>
+                <a 
+                  href="tel:+79956323108" 
+                  className="flex flex-col items-center gap-2 p-4 bg-black/30 border border-gold/20 rounded-xl hover:border-gold/50 transition-all group"
+                >
+                  <Icon name="Phone" size={24} className="text-gold group-hover:scale-110 transition-transform" />
+                  <span className="text-xs text-champagne/80">Позвонить</span>
+                </a>
+                <a 
+                  href="mailto:marico.event@mail.ru" 
+                  className="flex flex-col items-center gap-2 p-4 bg-black/30 border border-gold/20 rounded-xl hover:border-gold/50 transition-all group"
+                >
+                  <Icon name="Mail" size={24} className="text-gold group-hover:scale-110 transition-transform" />
+                  <span className="text-xs text-champagne/80">Email</span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -735,14 +773,22 @@ const Index = () => {
             <div>
               <h5 className="text-champagne font-normal mb-4 tracking-wide">Контакты</h5>
               <div className="space-y-3 text-sm">
-                <p className="flex items-center gap-2 text-champagne/60">
+                <a href="mailto:marico.event@mail.ru" className="flex items-center gap-2 text-champagne/60 hover:text-gold transition-colors">
                   <Icon name="Mail" size={14} className="text-gold" />
-                  hello@marico-event.ru
-                </p>
-                <p className="flex items-center gap-2 text-champagne/60">
+                  marico.event@mail.ru
+                </a>
+                <a href="tel:+79956323108" className="flex items-center gap-2 text-champagne/60 hover:text-gold transition-colors">
                   <Icon name="Phone" size={14} className="text-gold" />
-                  +7 (___) ___-__-__
-                </p>
+                  +7 (995) 632-31-08
+                </a>
+                <a href="https://wa.me/79182858216" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-champagne/60 hover:text-gold transition-colors">
+                  <Icon name="MessageCircle" size={14} className="text-gold" />
+                  WhatsApp
+                </a>
+                <a href="https://t.me/marico_event" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-champagne/60 hover:text-gold transition-colors">
+                  <Icon name="Send" size={14} className="text-gold" />
+                  Telegram
+                </a>
               </div>
             </div>
 
@@ -766,11 +812,14 @@ const Index = () => {
               Москва • Санкт-Петербург • Сочи • Крым
             </p>
             <div className="flex gap-6">
-              <a href="#" className="text-champagne/40 hover:text-gold transition-colors">
+              <a href="https://www.instagram.com/malinochka_mari" target="_blank" rel="noopener noreferrer" className="text-champagne/40 hover:text-gold transition-colors">
                 <Icon name="Instagram" size={20} />
               </a>
-              <a href="#" className="text-champagne/40 hover:text-gold transition-colors">
+              <a href="https://t.me/marico_event" target="_blank" rel="noopener noreferrer" className="text-champagne/40 hover:text-gold transition-colors">
                 <Icon name="Send" size={20} />
+              </a>
+              <a href="https://wa.me/79182858216" target="_blank" rel="noopener noreferrer" className="text-champagne/40 hover:text-gold transition-colors">
+                <Icon name="MessageCircle" size={20} />
               </a>
             </div>
           </div>
