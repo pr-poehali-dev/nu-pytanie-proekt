@@ -19,6 +19,7 @@ import PhilosophySection from '@/components/PhilosophySection';
 import InteractiveMap from '@/components/InteractiveMap';
 import AIGenerator from '@/components/AIGenerator';
 import ChecklistPopup from '@/components/ChecklistPopup';
+import PortfolioSlider from '@/components/PortfolioSlider';
 
 const Index = () => {
   const [date, setDate] = useState<Date>();
@@ -51,40 +52,7 @@ const Index = () => {
     }
   ];
 
-  const cases = [
-    {
-      id: 'sochi-wedding',
-      title: 'Свадьба на берегу моря',
-      location: 'Сочи',
-      guests: 120,
-      image: 'https://cdn.poehali.dev/projects/de9015d2-43e5-4979-bf59-270d4334d15d/files/7dfd9622-034e-41ba-9ee1-5873cbaace8c.jpg',
-      description: 'Роскошная церемония с панорамным видом на закат'
-    },
-    {
-      id: 'moscow-corporate',
-      title: 'Корпоратив премиум-класса',
-      location: 'Москва',
-      guests: 250,
-      image: 'https://cdn.poehali.dev/projects/de9015d2-43e5-4979-bf59-270d4334d15d/files/b7b648fd-f54f-487f-b94a-5b6d5ecad179.jpg',
-      description: 'Стильное мероприятие в центре столицы'
-    },
-    {
-      id: 'spb-anniversary',
-      title: 'Юбилей в усадьбе',
-      location: 'Санкт-Петербург',
-      guests: 80,
-      image: 'https://cdn.poehali.dev/projects/de9015d2-43e5-4979-bf59-270d4334d15d/files/16676814-acdc-4d68-ac49-4f273e16c44d.jpg',
-      description: 'Камерное торжество в исторической локации'
-    },
-    {
-      id: 'crimea-mountain',
-      title: 'Свадьба в горах',
-      location: 'Крым',
-      guests: 60,
-      image: 'https://cdn.poehali.dev/projects/de9015d2-43e5-4979-bf59-270d4334d15d/files/c16418a8-e802-4ecf-8d93-d9eb83527d58.jpg',
-      description: 'Уникальная выездная церемония на высоте'
-    }
-  ];
+
 
   const services = [
     {
@@ -397,58 +365,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="cases" className="py-24 px-6 lg:px-12 bg-gradient-to-b from-black to-muted/20">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20 animate-fade-in max-w-3xl mx-auto">
-            <p className="text-gold text-sm tracking-[0.3em] uppercase mb-4">Портфолио</p>
-            <h3 className="text-5xl lg:text-6xl font-light text-champagne mb-6">
-              Истории <span className="text-gold">успешных</span> событий
-            </h3>
-            <p className="text-xl text-champagne/70">
-              Каждый проект — это уникальная история с вызовами и триумфом
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {cases.map((caseItem, index) => (
-              <Link 
-                to={`/case/${caseItem.id}`}
-                key={index}
-                className="group cursor-pointer animate-fade-in block"
-                style={{ animationDelay: `${index * 150}ms` }}
-              >
-                <div className="relative overflow-hidden rounded-3xl">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent z-10 opacity-70 group-hover:opacity-50 transition-all"></div>
-                  <img 
-                    src={caseItem.image}
-                    alt={caseItem.title}
-                    className="w-full h-[500px] object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 p-8 z-20">
-                    <div className="flex items-center gap-4 mb-4 text-sm">
-                      <span className="flex items-center gap-1 text-gold">
-                        <Icon name="MapPin" size={14} />
-                        {caseItem.location}
-                      </span>
-                      <span className="flex items-center gap-1 text-champagne/70">
-                        <Icon name="Users" size={14} />
-                        {caseItem.guests} гостей
-                      </span>
-                    </div>
-                    <h4 className="text-3xl font-light text-champagne mb-3 group-hover:text-gold transition-colors flex items-center gap-3">
-                      {caseItem.title}
-                      <Icon name="ArrowRight" size={24} className="opacity-0 group-hover:opacity-100 transition-all transform group-hover:translate-x-2" />
-                    </h4>
-                    <p className="text-champagne/70">
-                      {caseItem.description}
-                    </p>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+      <PortfolioSlider />
 
       <section id="testimonials" className="py-24 px-6 lg:px-12">
         <div className="max-w-7xl mx-auto">
