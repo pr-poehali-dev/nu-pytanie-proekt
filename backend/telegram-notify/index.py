@@ -54,6 +54,8 @@ def handler(event: dict, context) -> dict:
         bot_token = os.environ.get('TELEGRAM_BOT_TOKEN')
         chat_id = os.environ.get('TELEGRAM_CHAT_ID')
         
+        print(f"Bot token exists: {bool(bot_token)}, Chat ID exists: {bool(chat_id)}")
+        
         if bot_token and chat_id:
             try:
                 telegram_url = f'https://api.telegram.org/bot{bot_token}/sendMessage'
@@ -66,9 +68,10 @@ def handler(event: dict, context) -> dict:
                 
                 req = urllib.request.Request(telegram_url, data=data, method='POST')
                 with urllib.request.urlopen(req, timeout=5) as response:
-                    pass
-            except Exception:
-                pass
+                    result = response.read().decode('utf-8')
+                    print(f"Telegram API response: {result}")
+            except Exception as e:
+                print(f"Error sending to Telegram: {str(e)}")
         
         return {
             'statusCode': 200,
