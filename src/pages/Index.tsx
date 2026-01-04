@@ -78,13 +78,42 @@ const Index = () => {
     }
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!agreedToTerms) {
       alert('Необходимо согласие на обработку персональных данных');
       return;
     }
-    console.log('Form submitted:', { ...formData, date });
+
+    try {
+      const response = await fetch('https://functions.poehali.dev/e3a1434e-5331-47aa-854a-b2bf47e0287f', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          eventType: formData.email,
+          eventDate: date ? format(date, 'dd.MM.yyyy') : 'Не указана',
+          message: formData.message
+        })
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        alert('✅ Спасибо! Ваша заявка отправлена. Я свяжусь с вами в ближайшее время!');
+        setFormData({ name: '', email: '', phone: '', message: '' });
+        setDate(undefined);
+        setAgreedToTerms(false);
+      } else {
+        alert('❌ Произошла ошибка при отправке. Пожалуйста, попробуйте позже или напишите напрямую.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('❌ Произошла ошибка при отправке. Пожалуйста, попробуйте позже или напишите напрямую.');
+    }
   };
 
   return (
