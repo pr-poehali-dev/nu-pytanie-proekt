@@ -102,26 +102,26 @@ const PortfolioSlider = () => {
   const currentCase = cases[currentIndex];
 
   return (
-    <section id="cases" className="py-32 px-6 lg:px-12 bg-gradient-to-b from-black via-muted/10 to-black relative overflow-hidden">
+    <section id="cases" className="py-16 md:py-24 lg:py-32 px-4 md:px-6 lg:px-12 bg-gradient-to-b from-black via-muted/10 to-black relative overflow-hidden">
       {/* Декоративные элементы */}
       <div className="absolute top-20 left-10 w-96 h-96 bg-gold/5 rounded-full blur-[120px]"></div>
       <div className="absolute bottom-20 right-10 w-80 h-80 bg-purple-600/5 rounded-full blur-[100px]"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-20 animate-fade-in">
-          <p className="text-gold text-sm tracking-[0.3em] uppercase mb-4">Портфолио</p>
-          <h3 className="text-5xl lg:text-6xl font-light text-champagne mb-6">
+        <div className="text-center mb-12 md:mb-16 lg:mb-20 animate-fade-in">
+          <p className="text-gold text-xs md:text-sm tracking-[0.3em] uppercase mb-4">Портфолио</p>
+          <h3 className="text-3xl md:text-4xl lg:text-6xl font-light text-champagne mb-4 md:mb-6">
             Истории <span className="text-gold">реализованных</span> событий
           </h3>
-          <p className="text-xl text-champagne/70 max-w-2xl mx-auto">
+          <p className="text-sm md:text-lg lg:text-xl text-champagne/70 max-w-2xl mx-auto px-4">
             Каждый проект — реальные цифры, детали и впечатления клиентов
           </p>
         </div>
 
         <div className="relative">
           {/* Основной слайд */}
-          <div className="relative overflow-hidden rounded-3xl mb-8">
-            <div className="relative h-[600px] lg:h-[700px]">
+          <div className="relative overflow-hidden rounded-2xl md:rounded-3xl mb-6 md:mb-8">
+            <div className="relative h-[500px] md:h-[600px] lg:h-[700px]">
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent z-10"></div>
               <img 
                 src={currentCase.image}
@@ -129,51 +129,51 @@ const PortfolioSlider = () => {
                 className="w-full h-full object-cover animate-fade-in"
               />
               
-              <div className="absolute inset-0 z-20 flex flex-col justify-end p-8 lg:p-16">
+              <div className="absolute inset-0 z-20 flex flex-col justify-end p-4 md:p-8 lg:p-16">
                 <div className="max-w-4xl">
-                  <div className="flex flex-wrap items-center gap-3 mb-6">
-                    <span className="px-4 py-1.5 bg-gold/90 text-black text-sm font-medium rounded-full">
+                  <div className="flex flex-wrap items-center gap-2 md:gap-3 mb-4 md:mb-6">
+                    <span className="px-3 md:px-4 py-1 md:py-1.5 bg-gold/90 text-black text-xs md:text-sm font-medium rounded-full">
                       {currentCase.category}
                     </span>
-                    <span className="px-4 py-1.5 bg-black/70 backdrop-blur-sm border border-gold/30 text-gold text-sm rounded-full">
+                    <span className="px-3 md:px-4 py-1 md:py-1.5 bg-black/70 backdrop-blur-sm border border-gold/30 text-gold text-xs md:text-sm rounded-full">
                       {currentCase.year}
                     </span>
                   </div>
 
-                  <h4 className="text-4xl lg:text-5xl font-light text-champagne mb-3">
+                  <h4 className="text-2xl md:text-3xl lg:text-5xl font-light text-champagne mb-2 md:mb-3">
                     {currentCase.title}
                   </h4>
-                  <p className="text-xl text-champagne/80 mb-8">
+                  <p className="text-base md:text-lg lg:text-xl text-champagne/80 mb-6 md:mb-8">
                     {currentCase.subtitle}
                   </p>
 
-                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                    <div className="bg-black/50 backdrop-blur-sm border border-gold/20 rounded-xl p-4">
-                      <Icon name="MapPin" size={20} className="text-gold mb-2" />
-                      <p className="text-champagne/60 text-xs mb-1">Локация</p>
-                      <p className="text-champagne text-sm font-medium">{currentCase.location}</p>
+                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-6 mb-6 md:mb-8">
+                    <div className="bg-black/50 backdrop-blur-sm border border-gold/20 rounded-lg md:rounded-xl p-3 md:p-4">
+                      <Icon name="MapPin" size={16} className="text-gold mb-1 md:mb-2 md:w-5 md:h-5" />
+                      <p className="text-champagne/60 text-[10px] md:text-xs mb-1">Локация</p>
+                      <p className="text-champagne text-xs md:text-sm font-medium line-clamp-2">{currentCase.location}</p>
                     </div>
-                    <div className="bg-black/50 backdrop-blur-sm border border-gold/20 rounded-xl p-4">
-                      <Icon name="Wallet" size={20} className="text-gold mb-2" />
-                      <p className="text-champagne/60 text-xs mb-1">Бюджет</p>
-                      <p className="text-champagne text-sm font-medium">{currentCase.budget}</p>
+                    <div className="bg-black/50 backdrop-blur-sm border border-gold/20 rounded-lg md:rounded-xl p-3 md:p-4">
+                      <Icon name="Wallet" size={16} className="text-gold mb-1 md:mb-2 md:w-5 md:h-5" />
+                      <p className="text-champagne/60 text-[10px] md:text-xs mb-1">Бюджет</p>
+                      <p className="text-champagne text-xs md:text-sm font-medium">{currentCase.budget}</p>
                     </div>
-                    <div className="bg-black/50 backdrop-blur-sm border border-gold/20 rounded-xl p-4">
-                      <Icon name="Users" size={20} className="text-gold mb-2" />
-                      <p className="text-champagne/60 text-xs mb-1">Гостей</p>
-                      <p className="text-champagne text-sm font-medium">{currentCase.guests} человек</p>
+                    <div className="bg-black/50 backdrop-blur-sm border border-gold/20 rounded-lg md:rounded-xl p-3 md:p-4">
+                      <Icon name="Users" size={16} className="text-gold mb-1 md:mb-2 md:w-5 md:h-5" />
+                      <p className="text-champagne/60 text-[10px] md:text-xs mb-1">Гостей</p>
+                      <p className="text-champagne text-xs md:text-sm font-medium">{currentCase.guests} человек</p>
                     </div>
-                    <div className="bg-black/50 backdrop-blur-sm border border-gold/20 rounded-xl p-4">
-                      <Icon name="Clock" size={20} className="text-gold mb-2" />
-                      <p className="text-champagne/60 text-xs mb-1">Подготовка</p>
-                      <p className="text-champagne text-sm font-medium">6 месяцев</p>
+                    <div className="bg-black/50 backdrop-blur-sm border border-gold/20 rounded-lg md:rounded-xl p-3 md:p-4">
+                      <Icon name="Clock" size={16} className="text-gold mb-1 md:mb-2 md:w-5 md:h-5" />
+                      <p className="text-champagne/60 text-[10px] md:text-xs mb-1">Подготовка</p>
+                      <p className="text-champagne text-xs md:text-sm font-medium">6 месяцев</p>
                     </div>
                   </div>
 
                   <Link to={`/case/${currentCase.id}`}>
-                    <Button size="lg" className="bg-gold text-black hover:bg-champagne">
+                    <Button size="lg" className="bg-gold text-black hover:bg-champagne text-sm md:text-base px-4 md:px-6 h-10 md:h-12">
                       Смотреть полный кейс
-                      <Icon name="ArrowRight" size={18} className="ml-2" />
+                      <Icon name="ArrowRight" size={16} className="ml-2 md:w-[18px] md:h-[18px]" />
                     </Button>
                   </Link>
                 </div>
@@ -182,12 +182,12 @@ const PortfolioSlider = () => {
           </div>
 
           {/* Навигация */}
-          <div className="flex items-center justify-between mb-8">
+          <div className="flex items-center justify-between mb-6 md:mb-8">
             <button
               onClick={prevSlide}
-              className="w-12 h-12 rounded-full bg-gold/10 border border-gold/30 hover:bg-gold/20 flex items-center justify-center transition-all"
+              className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gold/10 border border-gold/30 hover:bg-gold/20 flex items-center justify-center transition-all"
             >
-              <Icon name="ChevronLeft" size={24} className="text-gold" />
+              <Icon name="ChevronLeft" size={20} className="text-gold md:w-6 md:h-6" />
             </button>
 
             <div className="flex gap-2">
@@ -206,14 +206,14 @@ const PortfolioSlider = () => {
 
             <button
               onClick={nextSlide}
-              className="w-12 h-12 rounded-full bg-gold/10 border border-gold/30 hover:bg-gold/20 flex items-center justify-center transition-all"
+              className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gold/10 border border-gold/30 hover:bg-gold/20 flex items-center justify-center transition-all"
             >
-              <Icon name="ChevronRight" size={24} className="text-gold" />
+              <Icon name="ChevronRight" size={20} className="text-gold md:w-6 md:h-6" />
             </button>
           </div>
 
           {/* Превью других кейсов */}
-          <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
             {cases.map((caseItem, index) => {
               if (index === currentIndex) return null;
               
@@ -221,7 +221,7 @@ const PortfolioSlider = () => {
                 <button
                   key={caseItem.id}
                   onClick={() => goToSlide(index)}
-                  className="group relative overflow-hidden rounded-xl aspect-square hover:scale-105 transition-all"
+                  className="group relative overflow-hidden rounded-lg md:rounded-xl aspect-square hover:scale-105 transition-all"
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10 opacity-60 group-hover:opacity-40 transition-all"></div>
                   <img 

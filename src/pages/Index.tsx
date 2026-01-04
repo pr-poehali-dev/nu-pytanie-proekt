@@ -24,6 +24,7 @@ import PortfolioSlider from '@/components/PortfolioSlider';
 const Index = () => {
   const [date, setDate] = useState<Date>();
   const [agreedToTerms, setAgreedToTerms] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -94,16 +95,18 @@ const Index = () => {
       <ScrollProgress />
       <NotificationToast />
       <ChecklistPopup />
-      <nav className="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-xl border-b border-gold/10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-5 flex justify-between items-center">
-          <Link to="/" className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-gradient-to-br from-gold to-champagne rounded-full flex items-center justify-center">
-              <span className="text-black font-bold text-xl">М</span>
+      <nav className="fixed top-0 w-full z-50 bg-black/95 backdrop-blur-xl border-b border-gold/10">
+        <div className="max-w-7xl mx-auto px-4 lg:px-12 py-4 flex justify-between items-center">
+          <Link to="/" className="flex items-center gap-2">
+            <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-gold to-champagne rounded-full flex items-center justify-center">
+              <span className="text-black font-bold text-lg lg:text-xl">М</span>
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gold tracking-wide">Марина Малиночка</h1>
+              <h1 className="text-base lg:text-xl font-bold text-gold tracking-wide">Марина Малиночка</h1>
             </div>
           </Link>
+          
+          {/* Desktop menu */}
           <div className="hidden lg:flex gap-10 items-center">
             <a href="#about" className="text-sm tracking-wide hover:text-gold transition-all relative group">
               Обо мне
@@ -123,7 +126,59 @@ const Index = () => {
               </Button>
             </a>
           </div>
+
+          {/* Mobile menu button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="lg:hidden w-10 h-10 flex items-center justify-center text-gold"
+          >
+            <Icon name={mobileMenuOpen ? 'X' : 'Menu'} size={24} />
+          </button>
         </div>
+
+        {/* Mobile menu */}
+        {mobileMenuOpen && (
+          <div className="lg:hidden bg-black/98 backdrop-blur-xl border-t border-gold/10 animate-fade-in">
+            <div className="px-4 py-6 space-y-4">
+              <a 
+                href="#about" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="block py-3 text-champagne hover:text-gold transition-colors border-b border-gold/10"
+              >
+                Обо мне
+              </a>
+              <a 
+                href="#services"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block py-3 text-champagne hover:text-gold transition-colors border-b border-gold/10"
+              >
+                Услуги
+              </a>
+              <a 
+                href="#how"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block py-3 text-champagne hover:text-gold transition-colors border-b border-gold/10"
+              >
+                Как работаю
+              </a>
+              <a 
+                href="#cases"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block py-3 text-champagne hover:text-gold transition-colors border-b border-gold/10"
+              >
+                Портфолио
+              </a>
+              <a 
+                href="#contact"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <Button className="w-full bg-gold text-black hover:bg-champagne mt-2">
+                  Контакты
+                </Button>
+              </a>
+            </div>
+          </div>
+        )}
       </nav>
 
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -143,7 +198,7 @@ const Index = () => {
               </div>
               
               <div>
-                <h2 className="text-6xl lg:text-7xl font-light leading-[1.1] text-champagne mb-6">
+                <h2 className="text-4xl md:text-5xl lg:text-7xl font-light leading-[1.1] text-champagne mb-6">
                   <span className="relative inline-block">
                     Ваше событие
                     <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-gradient-to-r from-gold via-champagne to-transparent"></span>
@@ -155,13 +210,13 @@ const Index = () => {
                   </span>
                 </h2>
                 
-                <p className="text-xl text-champagne/80 max-w-xl leading-relaxed">
+                <p className="text-base md:text-lg lg:text-xl text-champagne/80 max-w-xl leading-relaxed">
                   Частный организатор мероприятий с 2026 года<br/>
                   <span className="text-gold">Всегда на вашей стороне</span>
                 </p>
               </div>
               
-              <div className="flex gap-4">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <a href="#contact">
                   <Button size="lg" className="bg-gold text-black hover:bg-champagne text-base px-8 h-14">
                     Обсудить мероприятие
@@ -174,18 +229,18 @@ const Index = () => {
                 </a>
               </div>
 
-              <div className="grid grid-cols-3 gap-8 pt-8 border-t border-gold/10">
+              <div className="grid grid-cols-3 gap-4 lg:gap-8 pt-8 border-t border-gold/10">
                 <div>
-                  <p className="text-4xl font-light text-gold mb-2">15+</p>
-                  <p className="text-sm text-champagne/60">Реализованных событий</p>
+                  <p className="text-2xl md:text-3xl lg:text-4xl font-light text-gold mb-2">15+</p>
+                  <p className="text-xs md:text-sm text-champagne/60">Реализованных событий</p>
                 </div>
                 <div>
-                  <p className="text-4xl font-light text-gold mb-2">7</p>
-                  <p className="text-sm text-champagne/60">Городов России</p>
+                  <p className="text-2xl md:text-3xl lg:text-4xl font-light text-gold mb-2">7</p>
+                  <p className="text-xs md:text-sm text-champagne/60">Городов России</p>
                 </div>
                 <div>
-                  <p className="text-4xl font-light text-gold mb-2">100%</p>
-                  <p className="text-sm text-champagne/60">Довольных клиентов</p>
+                  <p className="text-2xl md:text-3xl lg:text-4xl font-light text-gold mb-2">100%</p>
+                  <p className="text-xs md:text-sm text-champagne/60">Довольных клиентов</p>
                 </div>
               </div>
             </div>
@@ -206,28 +261,28 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 overflow-hidden py-6 border-t border-gold/10">
+        <div className="absolute bottom-0 left-0 right-0 overflow-hidden py-4 lg:py-6 border-t border-gold/10">
           <div className="flex animate-marquee">
-            <span className="text-gold/20 text-2xl mx-12 whitespace-nowrap">✦ ПРЕМИУМ СОБЫТИЯ</span>
-            <span className="text-gold/20 text-2xl mx-12 whitespace-nowrap">✦ ВСЕГДА НА ВАШЕЙ СТОРОНЕ</span>
-            <span className="text-gold/20 text-2xl mx-12 whitespace-nowrap">✦ ОТ ИДЕИ ДО РЕАЛИЗАЦИИ</span>
-            <span className="text-gold/20 text-2xl mx-12 whitespace-nowrap">✦ ЗАЩИТА ВАШИХ ИНТЕРЕСОВ</span>
-            <span className="text-gold/20 text-2xl mx-12 whitespace-nowrap">✦ ПРЕМИУМ СОБЫТИЯ</span>
-            <span className="text-gold/20 text-2xl mx-12 whitespace-nowrap">✦ ВСЕГДА НА ВАШЕЙ СТОРОНЕ</span>
-            <span className="text-gold/20 text-2xl mx-12 whitespace-nowrap">✦ ОТ ИДЕИ ДО РЕАЛИЗАЦИИ</span>
-            <span className="text-gold/20 text-2xl mx-12 whitespace-nowrap">✦ ЗАЩИТА ВАШИХ ИНТЕРЕСОВ</span>
+            <span className="text-gold/20 text-sm md:text-lg lg:text-2xl mx-6 md:mx-12 whitespace-nowrap">✦ ПРЕМИУМ СОБЫТИЯ</span>
+            <span className="text-gold/20 text-sm md:text-lg lg:text-2xl mx-6 md:mx-12 whitespace-nowrap">✦ ВСЕГДА НА ВАШЕЙ СТОРОНЕ</span>
+            <span className="text-gold/20 text-sm md:text-lg lg:text-2xl mx-6 md:mx-12 whitespace-nowrap">✦ ОТ ИДЕИ ДО РЕАЛИЗАЦИИ</span>
+            <span className="text-gold/20 text-sm md:text-lg lg:text-2xl mx-6 md:mx-12 whitespace-nowrap">✦ ЗАЩИТА ВАШИХ ИНТЕРЕСОВ</span>
+            <span className="text-gold/20 text-sm md:text-lg lg:text-2xl mx-6 md:mx-12 whitespace-nowrap">✦ ПРЕМИУМ СОБЫТИЯ</span>
+            <span className="text-gold/20 text-sm md:text-lg lg:text-2xl mx-6 md:mx-12 whitespace-nowrap">✦ ВСЕГДА НА ВАШЕЙ СТОРОНЕ</span>
+            <span className="text-gold/20 text-sm md:text-lg lg:text-2xl mx-6 md:mx-12 whitespace-nowrap">✦ ОТ ИДЕИ ДО РЕАЛИЗАЦИИ</span>
+            <span className="text-gold/20 text-sm md:text-lg lg:text-2xl mx-6 md:mx-12 whitespace-nowrap">✦ ЗАЩИТА ВАШИХ ИНТЕРЕСОВ</span>
           </div>
         </div>
       </section>
 
-      <section id="about" className="py-24 px-6 lg:px-12 bg-gradient-to-b from-black to-muted/20">
+      <section id="about" className="py-16 md:py-24 px-4 md:px-6 lg:px-12 bg-gradient-to-b from-black to-muted/20">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16 animate-fade-in max-w-4xl mx-auto">
-            <p className="text-gold text-sm tracking-[0.3em] uppercase mb-4">Почему я?</p>
-            <h3 className="text-5xl lg:text-6xl font-light text-champagne mb-8">
+          <div className="text-center mb-12 md:mb-16 animate-fade-in max-w-4xl mx-auto">
+            <p className="text-gold text-xs md:text-sm tracking-[0.3em] uppercase mb-4">Почему я?</p>
+            <h3 className="text-3xl md:text-4xl lg:text-6xl font-light text-champagne mb-6 md:mb-8">
               Марина Малиночка
             </h3>
-            <div className="text-left space-y-6 text-champagne/80 text-lg leading-relaxed">
+            <div className="text-left space-y-4 md:space-y-6 text-champagne/80 text-sm md:text-base lg:text-lg leading-relaxed">
               <p>
                 Я открыла свой проект в 2026 году как частный специалист по организации мероприятий. Моя миссия — создавать события, которые идеально соответствуют вашим желаниям и возможностям.
               </p>
@@ -237,30 +292,30 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="mb-20">
-            <h4 className="text-3xl font-light text-champagne mb-8 text-center">Гибкий подход</h4>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="mb-12 md:mb-20">
+            <h4 className="text-2xl md:text-3xl font-light text-champagne mb-6 md:mb-8 text-center">Гибкий подход</h4>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
               {[
                 { title: 'Полная организация с нуля', icon: 'Sparkles' },
                 { title: 'Помощь на определенном этапе', icon: 'Target' },
                 { title: 'Координация в день события', icon: 'CalendarCheck' },
                 { title: 'Консультация и подбор подрядчиков', icon: 'Users' }
               ].map((item, index) => (
-                <div key={index} className="neumorphic p-6 rounded-2xl text-center hover:transform hover:scale-105 transition-all">
-                  <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center mb-4 mx-auto">
-                    <Icon name={item.icon} size={24} className="text-gold" />
+                <div key={index} className="neumorphic p-4 md:p-6 rounded-2xl text-center hover:transform hover:scale-105 transition-all">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-gold/10 rounded-xl flex items-center justify-center mb-3 md:mb-4 mx-auto">
+                    <Icon name={item.icon} size={20} className="text-gold md:w-6 md:h-6" />
                   </div>
-                  <p className="text-champagne">{item.title}</p>
+                  <p className="text-champagne text-sm md:text-base">{item.title}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-purple-600/20 via-blue-600/20 to-purple-600/20 border-2 border-purple-500/40 rounded-3xl p-12 mb-20">
-            <h4 className="text-3xl font-light text-champagne mb-6 text-center">
+          <div className="bg-gradient-to-br from-purple-600/20 via-blue-600/20 to-purple-600/20 border-2 border-purple-500/40 rounded-2xl md:rounded-3xl p-6 md:p-12 mb-12 md:mb-20">
+            <h4 className="text-xl md:text-2xl lg:text-3xl font-light text-champagne mb-4 md:mb-6 text-center">
               Собственная база проверенных партнёров
             </h4>
-            <p className="text-xl text-champagne/90 max-w-4xl mx-auto leading-relaxed text-center">
+            <p className="text-sm md:text-base lg:text-xl text-champagne/90 max-w-4xl mx-auto leading-relaxed text-center">
               За время работы я собрала личную базу надежных подрядчиков из открытых источников. 
               Это не реклама — это моя кураторская подборка лучших специалистов. 
               <span className="text-gold font-normal block mt-4">После подписания договора вы получите полный доступ к этой базе.</span>
@@ -268,10 +323,10 @@ const Index = () => {
           </div>
 
           <div className="text-center">
-            <h4 className="text-2xl font-light text-champagne mb-6">География работы</h4>
-            <div className="flex flex-wrap gap-4 justify-center">
+            <h4 className="text-xl md:text-2xl font-light text-champagne mb-4 md:mb-6">География работы</h4>
+            <div className="flex flex-wrap gap-2 md:gap-4 justify-center">
               {['Москва', 'Санкт-Петербург', 'Сочи', 'Крым', 'Ваш город'].map((city, index) => (
-                <span key={index} className="px-6 py-3 bg-gold/10 border border-gold/30 rounded-full text-champagne">
+                <span key={index} className="px-4 md:px-6 py-2 md:py-3 bg-gold/10 border border-gold/30 rounded-full text-champagne text-sm md:text-base">
                   {city}
                 </span>
               ))}
@@ -280,16 +335,16 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="services" className="py-24 px-6 lg:px-12">
+      <section id="services" className="py-16 md:py-24 px-4 md:px-6 lg:px-12">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20 animate-fade-in max-w-3xl mx-auto">
-            <p className="text-gold text-sm tracking-[0.3em] uppercase mb-4">Что я организую</p>
-            <h3 className="text-5xl lg:text-6xl font-light text-champagne mb-6">
+          <div className="text-center mb-12 md:mb-20 animate-fade-in max-w-3xl mx-auto">
+            <p className="text-gold text-xs md:text-sm tracking-[0.3em] uppercase mb-4">Что я организую</p>
+            <h3 className="text-3xl md:text-4xl lg:text-6xl font-light text-champagne mb-6">
               Любые форматы <span className="text-gold">событий</span>
             </h3>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
             {[
               { icon: 'Cake', title: 'Дни рождения', description: 'Камерные и масштабные празднования любой сложности' },
               { icon: 'Heart', title: 'Свадьбы', description: 'Организация вашего особенного дня от А до Я' },
@@ -300,7 +355,7 @@ const Index = () => {
             ].map((service, index) => (
               <div 
                 key={index}
-                className="holographic-card neumorphic p-8 rounded-2xl hover:transform hover:scale-105 transition-all animate-fade-in"
+                className="holographic-card neumorphic p-6 md:p-8 rounded-2xl hover:transform hover:scale-105 transition-all animate-fade-in"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="w-14 h-14 bg-gold/10 rounded-xl flex items-center justify-center mb-6">
