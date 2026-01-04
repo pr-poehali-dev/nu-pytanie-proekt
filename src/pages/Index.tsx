@@ -222,7 +222,7 @@ const Index = () => {
             <div className="space-y-10 animate-fade-in">
               <div className="inline-block">
                 <div className="px-5 py-2 border border-gold/30 rounded-full shimmer-effect animate-glow-pulse">
-                  <p className="text-xs tracking-[0.3em] text-champagne uppercase">Работаю с 2026 года</p>
+                  <p className="text-xs tracking-[0.3em] text-champagne uppercase">Индивидуальный подход</p>
                 </div>
               </div>
               
@@ -240,7 +240,7 @@ const Index = () => {
                 </h2>
                 
                 <p className="text-base md:text-lg lg:text-xl text-champagne/80 max-w-xl leading-relaxed">
-                  Частный организатор мероприятий с 2026 года<br/>
+                  Частный организатор мероприятий<br/>
                   <span className="text-gold">Всегда на вашей стороне</span>
                 </p>
               </div>
@@ -313,7 +313,7 @@ const Index = () => {
             </h3>
             <div className="text-left space-y-4 md:space-y-6 text-champagne/80 text-sm md:text-base lg:text-lg leading-relaxed">
               <p>
-                Я открыла свой проект в 2026 году как частный специалист по организации мероприятий. Моя миссия — создавать события, которые идеально соответствуют вашим желаниям и возможностям.
+                Частный специалист по организации мероприятий. Моя миссия — создавать события, которые идеально соответствуют вашим желаниям и возможностям.
               </p>
               <p>
                 Моя главная особенность: <span className="text-gold font-normal">я всегда на стороне клиента</span>. Я не навязываю партнеров и подрядчиков, а подбираю под ваш запрос и бюджет именно то, что нужно именно вам.
@@ -728,7 +728,7 @@ const Index = () => {
                 </div>
               </div>
               <p className="text-champagne/60 leading-relaxed max-w-md">
-                Частный организатор мероприятий с 2026 года. Всегда на вашей стороне.
+                Частный организатор мероприятий. Всегда на вашей стороне.
               </p>
             </div>
 
@@ -760,7 +760,7 @@ const Index = () => {
 
           <div className="border-t border-gold/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-champagne/40">
-              © 2026 Марина Малиночка. Частный организатор мероприятий
+              © 2025 Марина Малиночка. Частный организатор мероприятий
             </p>
             <p className="text-xs text-champagne/30">
               Москва • Санкт-Петербург • Сочи • Крым
