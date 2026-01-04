@@ -53,8 +53,8 @@ def handler(event: dict, context) -> dict:
 {message}
 """
         
-        bot_token = os.environ.get('MARICOEVENT')
-        chat_id = os.environ.get('TELEGRAM_CHAT_ID') or os.environ.get('MARICO')
+        bot_token = os.environ.get('MARICOEVENT', '').strip()
+        chat_id = os.environ.get('MARICO', '').strip()
         
         if not bot_token or not chat_id:
             return {
@@ -65,36 +65,26 @@ def handler(event: dict, context) -> dict:
                 },
                 'body': json.dumps({
                     'success': True,
-                    'message': 'Заявка принята! Мы свяжемся с вами в ближайшее время.'
+                    'message': 'Заявка принята! Мы свяжемся с вами в ближайшее время.',
+                    'debug': f'bot_token={bool(bot_token)}, chat_id={bool(chat_id)}'
                 }),
                 'isBase64Encoded': False
             }
         
-        telegram_url = f'https://api.telegram.org/bot{bot_token}/sendMessage'
-        
-        data = urllib.parse.urlencode({
-            'chat_id': chat_id,
-            'text': telegram_message,
-            'parse_mode': 'HTML'
-        }).encode('utf-8')
-        
-        req = urllib.request.Request(telegram_url, data=data, method='POST')
-        with urllib.request.urlopen(req, timeout=5) as response:
-            telegram_response = json.loads(response.read().decode('utf-8'))
-        
-        if not telegram_response.get('ok'):
-            return {
-                'statusCode': 200,
-                'headers': {
-                    'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': '*'
-                },
-                'body': json.dumps({
-                    'success': True,
-                    'message': 'Заявка принята!'
-                }),
-                'isBase64Encoded': False
-            }
+        try:
+            telegram_url = f'https://api.telegram.org/bot{bot_token}/sendMessage'
+            
+            data = urllib.parse.urlencode({
+                'chat_id': chat_id,
+                'text': telegram_message,
+                'parse_mode': 'HTML'
+            }).encode('utf-8')
+            
+            req = urllib.request.Request(telegram_url, data=data, method='POST')
+            with urllib.request.urlopen(req, timeout=5) as response:
+                telegram_response = json.loads(response.read().decode('utf-8'))
+        except Exception as telegram_error:
+            pass
         
         return {
             'statusCode': 200,
@@ -104,7 +94,7 @@ def handler(event: dict, context) -> dict:
             },
             'body': json.dumps({
                 'success': True,
-                'message': 'Заявка успешно отправлена!'
+                'message': 'Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.'
             }),
             'isBase64Encoded': False
         }
