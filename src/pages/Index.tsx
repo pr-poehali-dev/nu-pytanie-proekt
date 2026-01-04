@@ -103,12 +103,12 @@ const Index = () => {
       const result = await response.json();
 
       if (result.success) {
-        alert('✅ Спасибо! Ваша заявка отправлена. Я свяжусь с вами в ближайшее время!');
+        alert('✅ Спасибо за заявку! Я свяжусь с вами в ближайшее время и обсудим все детали вашего события. До скорой встречи!');
         setFormData({ name: '', email: '', phone: '', message: '' });
         setDate(undefined);
         setAgreedToTerms(false);
       } else {
-        alert('❌ Произошла ошибка при отправке. Пожалуйста, попробуйте позже или напишите напрямую.');
+        alert('❌ Произошла ошибка при отправке. Пожалуйста, попробуйте позже или напишите мне напрямую.');
       }
     } catch (error) {
       console.error('Error submitting form:', error);

@@ -56,13 +56,13 @@ const ChecklistPopup = () => {
       const result = await response.json();
 
       if (result.success) {
-        alert('✅ Спасибо! Чек-лист будет отправлен вам в ближайшее время!');
+        alert('✅ Спасибо за интерес! Я свяжусь с вами в ближайшее время и вышлю персональный чек-лист для вашего события. До скорой встречи!');
         setOpen(false);
         setFormData({ name: '', phone: '', eventType: '' });
         setDate(undefined);
         setAgreedToTerms(false);
       } else {
-        alert('❌ Произошла ошибка. Пожалуйста, свяжитесь напрямую через контакты.');
+        alert('❌ Произошла ошибка. Пожалуйста, свяжитесь со мной напрямую через контакты.');
       }
     } catch (error) {
       console.error('Error submitting checklist:', error);
