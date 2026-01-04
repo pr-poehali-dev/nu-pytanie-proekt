@@ -120,9 +120,10 @@ const ChecklistPopup = () => {
 
           <div>
             <label className="block text-sm mb-2 text-champagne">Дата события</label>
-            <Popover>
+            <Popover modal={true}>
               <PopoverTrigger asChild>
                 <Button
+                  type="button"
                   variant="outline"
                   className="w-full justify-start text-left font-light border-gold/30 hover:border-gold bg-black/50 text-champagne h-11"
                 >
@@ -130,13 +131,14 @@ const ChecklistPopup = () => {
                   {date ? format(date, 'PPP', { locale: ru }) : 'Выберите дату'}
                 </Button>
               </PopoverTrigger>
-              <PopoverContent className="w-auto p-0 bg-muted border-gold/30">
+              <PopoverContent className="w-auto p-0 bg-black border-gold/30 z-[150]" align="center" side="top">
                 <Calendar
                   mode="single"
                   selected={date}
                   onSelect={setDate}
                   initialFocus
                   locale={ru}
+                  className="bg-black text-champagne"
                 />
               </PopoverContent>
             </Popover>

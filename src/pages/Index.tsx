@@ -167,7 +167,7 @@ const Index = () => {
 
         {/* Mobile menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-black/98 backdrop-blur-xl border-t border-gold/10 animate-fade-in">
+          <div className="lg:hidden bg-black/98 backdrop-blur-xl border-t border-gold/10 animate-fade-in fixed top-[73px] left-0 right-0 z-[90]">
             <div className="px-4 py-6 space-y-4">
               <a 
                 href="#about" 
@@ -655,9 +655,10 @@ const Index = () => {
 
               <div>
                 <label className="block text-sm font-light mb-3 text-champagne">Желаемая дата мероприятия</label>
-                <Popover>
+                <Popover modal={true}>
                   <PopoverTrigger asChild>
                     <Button
+                      type="button"
                       variant="outline"
                       className="w-full justify-start text-left font-light border-gold/30 hover:border-gold bg-black/50 text-champagne h-12"
                     >
@@ -665,13 +666,14 @@ const Index = () => {
                       {date ? format(date, 'PPP', { locale: ru }) : 'Выберите дату'}
                     </Button>
                   </PopoverTrigger>
-                  <PopoverContent className="w-auto p-0 bg-muted border-gold/30">
+                  <PopoverContent className="w-auto p-0 bg-black border-gold/30 z-[150]" align="center" side="top">
                     <Calendar
                       mode="single"
                       selected={date}
                       onSelect={setDate}
                       initialFocus
                       locale={ru}
+                      className="bg-black text-champagne"
                     />
                   </PopoverContent>
                 </Popover>
