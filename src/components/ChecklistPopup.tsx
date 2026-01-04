@@ -31,14 +31,43 @@ const ChecklistPopup = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!agreedToTerms) {
       alert('Необходимо согласие на обработку персональных данных');
       return;
     }
-    console.log('Checklist form submitted:', { ...formData, date });
-    setOpen(false);
+
+    try {
+      const response = await fetch('https://functions.poehali.dev/e3a1434e-5331-47aa-854a-b2bf47e0287f', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          eventType: formData.eventType,
+          eventDate: date ? format(date, 'dd.MM.yyyy') : 'Не указана',
+          message: '📋 Заявка на получение бесплатного чек-листа'
+        })
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        alert('✅ Спасибо! Чек-лист будет отправлен вам в ближайшее время!');
+        setOpen(false);
+        setFormData({ name: '', phone: '', eventType: '' });
+        setDate(undefined);
+        setAgreedToTerms(false);
+      } else {
+        alert('❌ Произошла ошибка. Пожалуйста, свяжитесь напрямую через контакты.');
+      }
+    } catch (error) {
+      console.error('Error submitting checklist:', error);
+      alert('❌ Произошла ошибка. Пожалуйста, свяжитесь напрямую через контакты.');
+    }
   };
 
   return (
