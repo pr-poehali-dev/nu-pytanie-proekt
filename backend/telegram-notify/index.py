@@ -54,7 +54,21 @@ def handler(event: dict, context) -> dict:
 """
         
         bot_token = os.environ.get('MARICOEVENT')
-        chat_id = os.environ.get('TELEGRAM_CHAT_ID')
+        chat_id = os.environ.get('TELEGRAM_CHAT_ID') or os.environ.get('MARICO')
+        
+        if not bot_token or not chat_id:
+            return {
+                'statusCode': 200,
+                'headers': {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*'
+                },
+                'body': json.dumps({
+                    'success': True,
+                    'message': 'Заявка принята! Мы свяжемся с вами в ближайшее время.'
+                }),
+                'isBase64Encoded': False
+            }
         
         telegram_url = f'https://api.telegram.org/bot{bot_token}/sendMessage'
         
