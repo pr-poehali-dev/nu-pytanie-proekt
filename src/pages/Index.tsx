@@ -148,19 +148,19 @@ const Index = () => {
             <div className="space-y-10 animate-fade-in">
               <div className="inline-block">
                 <div className="px-5 py-2 border border-gold/30 rounded-full shimmer-effect animate-glow-pulse">
-                  <p className="text-xs tracking-[0.3em] text-champagne uppercase">Частный организатор с 2026 года</p>
+                  <p className="text-xs tracking-[0.3em] text-champagne uppercase">Работаю с 2026 года</p>
                 </div>
               </div>
               
               <div>
                 <h2 className="text-6xl lg:text-7xl font-light leading-[1.1] text-champagne mb-6">
                   <span className="relative inline-block">
-                    Ваше событие.
+                    Ваше событие
                     <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-gradient-to-r from-gold via-champagne to-transparent"></span>
                   </span>
                   <br />
                   <span className="text-gold font-normal relative inline-block">
-                    Ваши условия.
+                    Ваши условия
                     <span className="absolute inset-0 blur-2xl bg-gold/20"></span>
                   </span>
                 </h2>
