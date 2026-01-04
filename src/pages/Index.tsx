@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Calendar } from '@/components/ui/calendar';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { Checkbox } from '@/components/ui/checkbox';
 import Icon from '@/components/ui/icon';
 import { format } from 'date-fns';
 import { ru } from 'date-fns/locale';
@@ -17,9 +18,11 @@ import ParallaxSection from '@/components/ParallaxSection';
 import PhilosophySection from '@/components/PhilosophySection';
 import InteractiveMap from '@/components/InteractiveMap';
 import AIGenerator from '@/components/AIGenerator';
+import ChecklistPopup from '@/components/ChecklistPopup';
 
 const Index = () => {
   const [date, setDate] = useState<Date>();
+  const [agreedToTerms, setAgreedToTerms] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -108,6 +111,10 @@ const Index = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!agreedToTerms) {
+      alert('Необходимо согласие на обработку персональных данных');
+      return;
+    }
     console.log('Form submitted:', { ...formData, date });
   };
 
@@ -118,6 +125,7 @@ const Index = () => {
       <CursorTrail />
       <ScrollProgress />
       <NotificationToast />
+      <ChecklistPopup />
       <nav className="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-xl border-b border-gold/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 py-5 flex justify-between items-center">
           <Link to="/" className="flex items-center gap-3">
@@ -562,17 +570,29 @@ const Index = () => {
                 />
               </div>
 
+              <div className="flex items-start gap-3 pt-2">
+                <Checkbox
+                  id="contact-terms"
+                  checked={agreedToTerms}
+                  onCheckedChange={(checked) => setAgreedToTerms(checked as boolean)}
+                  className="mt-1 border-gold/50 data-[state=checked]:bg-gold data-[state=checked]:border-gold"
+                />
+                <label htmlFor="contact-terms" className="text-xs text-champagne/70 leading-relaxed cursor-pointer">
+                  Я согласен на обработку персональных данных и принимаю{' '}
+                  <a href="/privacy" className="text-gold hover:underline">
+                    политику конфиденциальности
+                  </a>
+                </label>
+              </div>
+
               <Button 
                 type="submit" 
                 size="lg" 
                 className="w-full bg-gold text-black hover:bg-champagne text-base h-14 tracking-wide font-medium"
+                disabled={!agreedToTerms}
               >
                 Отправить заявку
               </Button>
-              
-              <p className="text-xs text-center text-champagne/50">
-                Нажимая кнопку, вы соглашаетесь на обработку персональных данных
-              </p>
             </form>
           </div>
         </div>
