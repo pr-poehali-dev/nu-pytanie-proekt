@@ -369,6 +369,122 @@ const Index = () => {
         </div>
       </section>
 
+      <section className="py-16 md:py-24 px-4 md:px-6 lg:px-12 bg-gradient-to-b from-black via-purple-950/10 to-black relative overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gold/5 rounded-full blur-[150px]"></div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-12 md:mb-16 animate-fade-in">
+            <p className="text-gold text-xs md:text-sm tracking-[0.3em] uppercase mb-4">Уникальные возможности</p>
+            <h3 className="text-3xl md:text-4xl lg:text-6xl font-light text-champagne mb-6">
+              Больше чем просто <span className="text-gold">организация</span>
+            </h3>
+            <p className="text-sm md:text-lg lg:text-xl text-champagne/70 max-w-3xl mx-auto">
+              Создаю WOW-эффект с помощью современных технологий и креативных решений
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
+            <div className="holographic-card p-6 md:p-8 rounded-2xl hover:scale-105 transition-all">
+              <div className="w-16 h-16 bg-gradient-to-br from-gold/20 to-purple-600/20 rounded-2xl flex items-center justify-center mb-6">
+                <Icon name="Globe" size={32} className="text-gold" />
+              </div>
+              <h4 className="text-xl md:text-2xl font-normal text-champagne mb-4">Персональный сайт-приглашение</h4>
+              <p className="text-sm md:text-base text-champagne/70 leading-relaxed mb-4">
+                Создам уникальный онлайн-сайт для вашего события: с таймером, картой проезда, RSVP-формой и галереей
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-3 py-1 bg-gold/10 border border-gold/30 rounded-full text-xs text-gold">Адаптивный дизайн</span>
+                <span className="px-3 py-1 bg-gold/10 border border-gold/30 rounded-full text-xs text-gold">Уникальный домен</span>
+                <span className="px-3 py-1 bg-gold/10 border border-gold/30 rounded-full text-xs text-gold">Онлайн RSVP</span>
+              </div>
+            </div>
+
+            <div className="holographic-card p-6 md:p-8 rounded-2xl hover:scale-105 transition-all">
+              <div className="w-16 h-16 bg-gradient-to-br from-gold/20 to-blue-600/20 rounded-2xl flex items-center justify-center mb-6">
+                <Icon name="Sparkles" size={32} className="text-gold" />
+              </div>
+              <h4 className="text-xl md:text-2xl font-normal text-champagne mb-4">Интерактивные элементы</h4>
+              <p className="text-sm md:text-base text-champagne/70 leading-relaxed mb-4">
+                QR-коды для меню, онлайн-фотобудка с мгновенной отправкой, live-трансляция для удалённых гостей
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-3 py-1 bg-gold/10 border border-gold/30 rounded-full text-xs text-gold">QR-меню</span>
+                <span className="px-3 py-1 bg-gold/10 border border-gold/30 rounded-full text-xs text-gold">Фотобудка</span>
+                <span className="px-3 py-1 bg-gold/10 border border-gold/30 rounded-full text-xs text-gold">Live-стрим</span>
+              </div>
+            </div>
+
+            <div className="holographic-card p-6 md:p-8 rounded-2xl hover:scale-105 transition-all">
+              <div className="w-16 h-16 bg-gradient-to-br from-gold/20 to-pink-600/20 rounded-2xl flex items-center justify-center mb-6">
+                <Icon name="Palette" size={32} className="text-gold" />
+              </div>
+              <h4 className="text-xl md:text-2xl font-normal text-champagne mb-4">Кастомная айдентика</h4>
+              <p className="text-sm md:text-base text-champagne/70 leading-relaxed mb-4">
+                Разработаю уникальный стиль мероприятия: логотип, монограмму, фирменные цвета и полиграфию
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-3 py-1 bg-gold/10 border border-gold/30 rounded-full text-xs text-gold">Логотип события</span>
+                <span className="px-3 py-1 bg-gold/10 border border-gold/30 rounded-full text-xs text-gold">Монограмма</span>
+                <span className="px-3 py-1 bg-gold/10 border border-gold/30 rounded-full text-xs text-gold">Брендбук</span>
+              </div>
+            </div>
+
+            <div className="holographic-card p-6 md:p-8 rounded-2xl hover:scale-105 transition-all">
+              <div className="w-16 h-16 bg-gradient-to-br from-gold/20 to-green-600/20 rounded-2xl flex items-center justify-center mb-6">
+                <Icon name="Video" size={32} className="text-gold" />
+              </div>
+              <h4 className="text-xl md:text-2xl font-normal text-champagne mb-4">Видео-приглашения</h4>
+              <p className="text-sm md:text-base text-champagne/70 leading-relaxed mb-4">
+                Персональные видео-приглашения для VIP-гостей с анимацией и вашими пожеланиями
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-3 py-1 bg-gold/10 border border-gold/30 rounded-full text-xs text-gold">Анимация</span>
+                <span className="px-3 py-1 bg-gold/10 border border-gold/30 rounded-full text-xs text-gold">Персонализация</span>
+              </div>
+            </div>
+
+            <div className="holographic-card p-6 md:p-8 rounded-2xl hover:scale-105 transition-all">
+              <div className="w-16 h-16 bg-gradient-to-br from-gold/20 to-red-600/20 rounded-2xl flex items-center justify-center mb-6">
+                <Icon name="MessageSquare" size={32} className="text-gold" />
+              </div>
+              <h4 className="text-xl md:text-2xl font-normal text-champagne mb-4">Чат-бот для гостей</h4>
+              <p className="text-sm md:text-base text-champagne/70 leading-relaxed mb-4">
+                Telegram/WhatsApp бот с программой, ответами на вопросы и уведомлениями для гостей
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-3 py-1 bg-gold/10 border border-gold/30 rounded-full text-xs text-gold">24/7 поддержка</span>
+                <span className="px-3 py-1 bg-gold/10 border border-gold/30 rounded-full text-xs text-gold">Push-уведомления</span>
+              </div>
+            </div>
+
+            <div className="holographic-card p-6 md:p-8 rounded-2xl hover:scale-105 transition-all">
+              <div className="w-16 h-16 bg-gradient-to-br from-gold/20 to-orange-600/20 rounded-2xl flex items-center justify-center mb-6">
+                <Icon name="Gift" size={32} className="text-gold" />
+              </div>
+              <h4 className="text-xl md:text-2xl font-normal text-champagne mb-4">Цифровой wishlist</h4>
+              <p className="text-sm md:text-base text-champagne/70 leading-relaxed mb-4">
+                Онлайн список желаний с возможностью денежных подарков через безопасные сервисы
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-3 py-1 bg-gold/10 border border-gold/30 rounded-full text-xs text-gold">Удобная оплата</span>
+                <span className="px-3 py-1 bg-gold/10 border border-gold/30 rounded-full text-xs text-gold">Список желаний</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <div className="inline-block bg-gradient-to-r from-gold/10 via-purple-600/10 to-gold/10 border-2 border-gold/30 rounded-2xl p-6 md:p-8">
+              <p className="text-champagne/90 text-base md:text-lg mb-2">
+                💡 <span className="text-gold font-medium">Все цифровые решения</span> создаются индивидуально под ваше событие
+              </p>
+              <p className="text-champagne/60 text-sm md:text-base">
+                От простого сайта-приглашения до полноценной цифровой экосистемы мероприятия
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="how" className="py-24 px-6 lg:px-12">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20 animate-fade-in max-w-3xl mx-auto">

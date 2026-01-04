@@ -98,6 +98,8 @@ const CaseStudy = () => {
         'Разработка концепции оформления',
         'Поиск всех подрядчиков',
         'Согласование меню с кейтерингом',
+        '🌐 Создание персонального сайта-приглашения с RSVP',
+        '✨ QR-коды для гостевой навигации и меню',
         'Составление тайминга',
         'Координация подрядчиков',
         'Присутствие в день свадьбы (10 часов)',
@@ -191,6 +193,8 @@ const CaseStudy = () => {
       included: [
         'Подбор площадки',
         'Разработка концепции',
+        '📱 Telegram-бот с программой и уведомлениями',
+        '🎯 Интерактивная фотобудка с мгновенной отправкой',
         'Организация кейтеринга',
         'Подбор ведущего и DJ',
         'Закупка подарков',
@@ -277,6 +281,9 @@ const CaseStudy = () => {
       included: [
         'Бронирование ресторана',
         'Согласование меню',
+        '🎨 Создание персональной монограммы и фирменного стиля',
+        '🎬 Видео-приглашения для VIP-гостей с анимацией',
+        '🎁 Цифровой wishlist для гостей',
         'Подбор декоратора',
         'Организация музыкальной программы',
         'Создание видео с поздравлениями',
@@ -490,6 +497,101 @@ const CaseStudy = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 px-6 lg:px-12 bg-gradient-to-b from-muted/10 to-black">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-4xl font-light text-champagne mb-4 text-center">
+            Цифровые <span className="text-gold">решения</span>
+          </h2>
+          <p className="text-champagne/60 text-center mb-12 max-w-2xl mx-auto">
+            Современные технологии делают ваше событие ещё более запоминающимся
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
+            <div className="holographic-card rounded-2xl p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center">
+                  <Icon name="Globe" size={24} className="text-gold" />
+                </div>
+                <h3 className="text-2xl font-light text-champagne">Персональный сайт-приглашение</h3>
+              </div>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <Icon name="Check" size={18} className="text-gold mt-0.5 flex-shrink-0" />
+                  <span className="text-champagne/80">Уникальный дизайн под стиль мероприятия</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Icon name="Check" size={18} className="text-gold mt-0.5 flex-shrink-0" />
+                  <span className="text-champagne/80">Таймер обратного отсчёта до события</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Icon name="Check" size={18} className="text-gold mt-0.5 flex-shrink-0" />
+                  <span className="text-champagne/80">RSVP-форма с подтверждением гостей</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Icon name="Check" size={18} className="text-gold mt-0.5 flex-shrink-0" />
+                  <span className="text-champagne/80">Карта проезда и контакты</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Icon name="Check" size={18} className="text-gold mt-0.5 flex-shrink-0" />
+                  <span className="text-champagne/80">Галерея с историей пары/компании</span>
+                </li>
+              </ul>
+              <div className="mt-6 pt-6 border-t border-gold/20">
+                <p className="text-champagne/60 text-sm">
+                  💡 Домен вида: <span className="text-gold">anna-and-dmitry.wedding</span>
+                </p>
+              </div>
+            </div>
+
+            <div className="holographic-card rounded-2xl p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center">
+                  <Icon name="Sparkles" size={24} className="text-gold" />
+                </div>
+                <h3 className="text-2xl font-light text-champagne">Интерактивные элементы</h3>
+              </div>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <Icon name="Check" size={18} className="text-gold mt-0.5 flex-shrink-0" />
+                  <span className="text-champagne/80">QR-коды для меню и программы</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Icon name="Check" size={18} className="text-gold mt-0.5 flex-shrink-0" />
+                  <span className="text-champagne/80">Онлайн-фотобудка с мгновенной отправкой</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Icon name="Check" size={18} className="text-gold mt-0.5 flex-shrink-0" />
+                  <span className="text-champagne/80">Telegram/WhatsApp-бот для гостей</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Icon name="Check" size={18} className="text-gold mt-0.5 flex-shrink-0" />
+                  <span className="text-champagne/80">Live-трансляция для удалённых гостей</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Icon name="Check" size={18} className="text-gold mt-0.5 flex-shrink-0" />
+                  <span className="text-champagne/80">Цифровой wishlist с онлайн-оплатой</span>
+                </li>
+              </ul>
+              <div className="mt-6 pt-6 border-t border-gold/20">
+                <p className="text-champagne/60 text-sm">
+                  ✨ Все элементы адаптированы под мобильные устройства
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-r from-purple-600/10 via-gold/10 to-purple-600/10 border border-gold/30 rounded-2xl p-8 text-center">
+            <Icon name="Zap" size={48} className="text-gold mx-auto mb-4" />
+            <h4 className="text-2xl font-light text-champagne mb-3">
+              Создаём WOW-эффект
+            </h4>
+            <p className="text-champagne/70 max-w-2xl mx-auto">
+              Все цифровые решения разрабатываются индивидуально под ваше мероприятие и интегрируются в общую концепцию события
+            </p>
           </div>
         </div>
       </section>
