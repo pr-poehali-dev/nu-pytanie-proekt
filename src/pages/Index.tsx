@@ -94,9 +94,9 @@ const Index = () => {
         body: JSON.stringify({
           name: formData.name,
           phone: formData.phone,
-          eventType: formData.email,
+          eventType: formData.email || 'Не указано',
           eventDate: date ? format(date, 'dd.MM.yyyy') : 'Не указана',
-          message: formData.message
+          message: formData.message || 'Заявка с основной формы сайта'
         })
       });
 
