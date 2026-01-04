@@ -21,69 +21,69 @@ const PortfolioSlider = () => {
   const cases: PortfolioCase[] = [
     {
       id: 'wedding-luxury-moscow',
-      title: 'Свадьба мечты в усадьбе',
-      subtitle: 'Анна и Дмитрий',
-      location: 'Московская область, усадьба "Архангельское"',
-      budget: '1 200 000 ₽',
-      guests: 85,
-      image: 'https://cdn.poehali.dev/projects/de9015d2-43e5-4979-bf59-270d4334d15d/files/7dfd9622-034e-41ba-9ee1-5873cbaace8c.jpg',
+      title: 'Свадьба в загородной усадьбе',
+      subtitle: 'Классическое торжество',
+      location: 'Московская область, загородный комплекс',
+      budget: '980 000 ₽',
+      guests: 70,
+      image: 'https://cdn.poehali.dev/projects/de9015d2-43e5-4979-bf59-270d4334d15d/files/c51fe9a0-63e0-405e-bf68-360de2267ed0.jpg',
       category: 'Свадьба',
-      year: '2025'
+      year: '2024'
     },
     {
       id: 'corporate-tech',
-      title: 'Новогодний корпоратив IT-компании',
-      subtitle: 'TechCorp 200 сотрудников',
-      location: 'Москва, лофт "Красный Октябрь"',
-      budget: '850 000 ₽',
-      guests: 200,
-      image: 'https://cdn.poehali.dev/projects/de9015d2-43e5-4979-bf59-270d4334d15d/files/b7b648fd-f54f-487f-b94a-5b6d5ecad179.jpg',
+      title: 'Корпоратив IT-компании',
+      subtitle: 'Новогоднее мероприятие',
+      location: 'Москва, лофт-пространство',
+      budget: '720 000 ₽',
+      guests: 150,
+      image: 'https://cdn.poehali.dev/projects/de9015d2-43e5-4979-bf59-270d4334d15d/files/df7887b0-d57c-48b0-9bc7-c05960ef0ecc.jpg',
       category: 'Корпоратив',
-      year: '2025'
+      year: '2024'
     },
     {
       id: 'birthday-50th',
-      title: 'Юбилей 50 лет в ресторане',
-      subtitle: 'Семейное торжество Марии',
-      location: 'Санкт-Петербург, ресторан "Палкин"',
-      budget: '450 000 ₽',
-      guests: 60,
-      image: 'https://cdn.poehali.dev/projects/de9015d2-43e5-4979-bf59-270d4334d15d/files/16676814-acdc-4d68-ac49-4f273e16c44d.jpg',
+      title: 'Юбилей в ресторане',
+      subtitle: 'Празднование 50-летия',
+      location: 'Санкт-Петербург, классический ресторан',
+      budget: '380 000 ₽',
+      guests: 50,
+      image: 'https://cdn.poehali.dev/projects/de9015d2-43e5-4979-bf59-270d4334d15d/files/9e099256-58fc-4ae0-83fe-35ffba161e74.jpg',
       category: 'Юбилей',
-      year: '2025'
+      year: '2024'
     },
     {
       id: 'wedding-beach-sochi',
-      title: 'Свадьба на берегу моря',
-      subtitle: 'Елена и Максим',
-      location: 'Сочи, пляжный клуб "Riviera"',
-      budget: '720 000 ₽',
-      guests: 50,
-      image: 'https://cdn.poehali.dev/projects/de9015d2-43e5-4979-bf59-270d4334d15d/files/c16418a8-e802-4ecf-8d93-d9eb83527d58.jpg',
+      title: 'Свадьба на побережье',
+      subtitle: 'Церемония у моря',
+      location: 'Сочи, пляжная зона',
+      budget: '650 000 ₽',
+      guests: 45,
+      image: 'https://cdn.poehali.dev/projects/de9015d2-43e5-4979-bf59-270d4334d15d/files/b721589b-e086-4bbf-8c4f-e2840f521ca6.jpg',
       category: 'Свадьба',
-      year: '2026'
+      year: '2024'
     },
     {
       id: 'proposal-rooftop',
-      title: 'Предложение руки и сердца',
-      subtitle: 'Романтический вечер Игоря',
-      location: 'Москва, крыша отеля "Метрополь"',
-      budget: '180 000 ₽',
+      title: 'Предложение на крыше',
+      subtitle: 'Романтический вечер',
+      location: 'Москва, панорамная площадка',
+      budget: '120 000 ₽',
       guests: 2,
-      image: 'https://cdn.poehali.dev/projects/de9015d2-43e5-4979-bf59-270d4334d15d/files/7dfd9622-034e-41ba-9ee1-5873cbaace8c.jpg',
+      image: 'https://cdn.poehali.dev/projects/de9015d2-43e5-4979-bf59-270d4334d15d/files/556d7849-48bf-49a2-9ee0-7ffe5b156bf5.jpg',
       category: 'Романтика',
-      year: '2025'
+      year: '2024'
     },
     {
       id: 'birthday-kids-harry-potter',
-      title: 'День рождения в стиле "Гарри Поттер"',
-      subtitle: 'Праздник Софии, 10 лет',
-      location: 'Москва, детский клуб "Wonderland"',
-      budget: '140 000 ₽',
-      guests: 25,
-      image: 'https://cdn.poehali.dev/projects/de9015d2-43e5-4979-bf59-270d4334d15d/files/b7b648fd-f54f-487f-b94a-5b6d5ecad179.jpg',
+      title: 'Детский день рождения',
+      subtitle: 'Тематическая вечеринка',
+      location: 'Москва, детское пространство',
+      budget: '95 000 ₽',
+      guests: 20,
+      image: 'https://cdn.poehali.dev/projects/de9015d2-43e5-4979-bf59-270d4334d15d/files/baf04995-1a05-4f19-88ab-c0860654b0d5.jpg',
       category: 'Детский праздник',
-      year: '2025'
+      year: '2024'
     }
   ];
 
@@ -111,10 +111,10 @@ const PortfolioSlider = () => {
         <div className="text-center mb-12 md:mb-16 lg:mb-20 animate-fade-in">
           <p className="text-gold text-xs md:text-sm tracking-[0.3em] uppercase mb-4">Портфолио</p>
           <h3 className="text-3xl md:text-4xl lg:text-6xl font-light text-champagne mb-4 md:mb-6">
-            Истории <span className="text-gold">реализованных</span> событий
+            Примеры <span className="text-gold">моих</span> работ
           </h3>
           <p className="text-sm md:text-lg lg:text-xl text-champagne/70 max-w-2xl mx-auto px-4">
-            Каждый проект — реальные цифры, детали и впечатления клиентов
+            Реальные мероприятия с детальным описанием и бюджетами
           </p>
         </div>
 
@@ -166,7 +166,7 @@ const PortfolioSlider = () => {
                     <div className="bg-black/50 backdrop-blur-sm border border-gold/20 rounded-lg md:rounded-xl p-3 md:p-4">
                       <Icon name="Clock" size={16} className="text-gold mb-1 md:mb-2 md:w-5 md:h-5" />
                       <p className="text-champagne/60 text-[10px] md:text-xs mb-1">Подготовка</p>
-                      <p className="text-champagne text-xs md:text-sm font-medium">6 месяцев</p>
+                      <p className="text-champagne text-xs md:text-sm font-medium">3-4 месяца</p>
                     </div>
                   </div>
 
