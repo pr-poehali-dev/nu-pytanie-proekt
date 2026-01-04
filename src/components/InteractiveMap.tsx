@@ -60,42 +60,105 @@ const InteractiveMap = () => {
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative">
-            <div className="relative w-full aspect-square neumorphic rounded-3xl p-8 overflow-hidden">
+            <div className="relative w-full aspect-square neumorphic rounded-3xl p-8 overflow-hidden bg-gradient-to-br from-gold/5 to-purple-600/5">
               <svg
-                viewBox="0 0 100 100"
+                viewBox="0 0 200 120"
                 className="w-full h-full"
-                style={{ filter: 'drop-shadow(0 0 20px rgba(212, 175, 55, 0.2))' }}
+                style={{ filter: 'drop-shadow(0 0 20px rgba(212, 175, 55, 0.3))' }}
               >
+                <defs>
+                  <linearGradient id="mapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style={{ stopColor: 'rgba(212, 175, 55, 0.2)', stopOpacity: 1 }} />
+                    <stop offset="50%" style={{ stopColor: 'rgba(138, 43, 226, 0.15)', stopOpacity: 1 }} />
+                    <stop offset="100%" style={{ stopColor: 'rgba(79, 70, 229, 0.2)', stopOpacity: 1 }} />
+                  </linearGradient>
+                </defs>
+                
+                {/* Упрощённый контур России */}
                 <path
-                  d="M 20 40 Q 30 20 50 25 T 70 35 Q 80 45 75 60 T 60 80 Q 40 85 25 75 T 20 40 Z"
-                  fill="rgba(212, 175, 55, 0.05)"
-                  stroke="rgba(212, 175, 55, 0.3)"
-                  strokeWidth="0.5"
+                  d="M 30 45 L 40 35 L 50 30 L 70 28 L 90 30 L 110 32 L 130 35 L 150 38 L 170 42 L 180 48 L 185 55 L 180 62 L 170 68 L 150 72 L 130 70 L 110 68 L 90 65 L 80 70 L 70 75 L 60 78 L 50 80 L 40 78 L 35 70 L 30 60 L 28 50 Z"
+                  fill="url(#mapGradient)"
+                  stroke="rgba(212, 175, 55, 0.5)"
+                  strokeWidth="1"
+                  className="transition-all"
                 />
+                
+                {/* Города с пульсацией */}
                 {cities.map((city) => (
                   <g key={city.name}>
+                    {/* Пульсирующий круг при выборе */}
+                    {selectedCity === city.name && (
+                      <>
+                        <circle
+                          cx={city.position.x * 2}
+                          cy={city.position.y * 1.2}
+                          r="20"
+                          fill="none"
+                          stroke="#D4AF37"
+                          strokeWidth="0.5"
+                          opacity="0.3"
+                          className="animate-ping"
+                        />
+                        <circle
+                          cx={city.position.x * 2}
+                          cy={city.position.y * 1.2}
+                          r="15"
+                          fill="none"
+                          stroke="#D4AF37"
+                          strokeWidth="0.8"
+                          opacity="0.5"
+                          className="animate-pulse"
+                        />
+                      </>
+                    )}
+                    
+                    {/* Основная точка города */}
                     <circle
-                      cx={city.position.x}
-                      cy={city.position.y}
-                      r={selectedCity === city.name ? '4' : '2.5'}
-                      fill={selectedCity === city.name ? '#D4AF37' : 'rgba(212, 175, 55, 0.6)'}
-                      className="cursor-pointer transition-all hover:r-[4]"
+                      cx={city.position.x * 2}
+                      cy={city.position.y * 1.2}
+                      r={selectedCity === city.name ? '6' : '4'}
+                      fill={selectedCity === city.name ? '#D4AF37' : 'rgba(212, 175, 55, 0.8)'}
+                      className="cursor-pointer transition-all hover:scale-150"
                       onClick={() => setSelectedCity(city.name)}
-                    />
-                    <circle
-                      cx={city.position.x}
-                      cy={city.position.y}
-                      r="8"
-                      fill="transparent"
-                      className="cursor-pointer animate-pulse"
-                      onClick={() => setSelectedCity(city.name)}
-                      opacity={selectedCity === city.name ? '0.3' : '0'}
-                      stroke="#D4AF37"
+                      stroke="#000"
                       strokeWidth="0.5"
                     />
+                    
+                    {/* Внешнее кольцо */}
+                    <circle
+                      cx={city.position.x * 2}
+                      cy={city.position.y * 1.2}
+                      r="8"
+                      fill="transparent"
+                      stroke="rgba(212, 175, 55, 0.4)"
+                      strokeWidth="1"
+                      className="cursor-pointer transition-all"
+                      onClick={() => setSelectedCity(city.name)}
+                    />
+                    
+                    {/* Название города */}
+                    <text
+                      x={city.position.x * 2}
+                      y={city.position.y * 1.2 - 12}
+                      fill="rgba(212, 175, 55, 0.9)"
+                      fontSize="6"
+                      textAnchor="middle"
+                      className="font-light pointer-events-none"
+                      style={{ textShadow: '0 0 4px rgba(0, 0, 0, 0.8)' }}
+                    >
+                      {city.name}
+                    </text>
                   </g>
                 ))}
               </svg>
+              
+              {/* Легенда */}
+              <div className="absolute bottom-4 left-4 bg-black/70 backdrop-blur-sm border border-gold/30 rounded-lg p-3 text-xs">
+                <div className="flex items-center gap-2 text-champagne/70">
+                  <div className="w-3 h-3 rounded-full bg-gold"></div>
+                  <span>Кликните по городу</span>
+                </div>
+              </div>
             </div>
           </div>
 
