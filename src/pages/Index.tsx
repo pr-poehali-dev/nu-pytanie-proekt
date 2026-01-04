@@ -8,6 +8,15 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import Icon from '@/components/ui/icon';
 import { format } from 'date-fns';
 import { ru } from 'date-fns/locale';
+import AnimatedBackground from '@/components/AnimatedBackground';
+import FloatingIcons from '@/components/FloatingIcons';
+import CursorTrail from '@/components/CursorTrail';
+import ScrollProgress from '@/components/ScrollProgress';
+import NotificationToast from '@/components/NotificationToast';
+import ParallaxSection from '@/components/ParallaxSection';
+import PhilosophySection from '@/components/PhilosophySection';
+import InteractiveMap from '@/components/InteractiveMap';
+import AIGenerator from '@/components/AIGenerator';
 
 const Index = () => {
   const [date, setDate] = useState<Date>();
@@ -103,7 +112,12 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-foreground overflow-x-hidden">
+    <div className="min-h-screen bg-black text-foreground overflow-x-hidden relative">
+      <AnimatedBackground />
+      <FloatingIcons />
+      <CursorTrail />
+      <ScrollProgress />
+      <NotificationToast />
       <nav className="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-xl border-b border-gold/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 py-5 flex justify-between items-center">
           <Link to="/" className="flex items-center gap-3">
@@ -256,12 +270,14 @@ const Index = () => {
                 { title: 'Координация в день события', icon: 'CalendarCheck' },
                 { title: 'Консультация и подбор подрядчиков', icon: 'Users' }
               ].map((item, index) => (
-                <div key={index} className="p-6 bg-muted/30 border border-gold/20 rounded-2xl text-center">
-                  <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center mb-4 mx-auto">
-                    <Icon name={item.icon} size={24} className="text-gold" />
+                <ParallaxSection key={index} speed={0.1 + index * 0.05}>
+                  <div className="neumorphic p-6 rounded-2xl text-center hover:transform hover:scale-105 transition-all">
+                    <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                      <Icon name={item.icon} size={24} className="text-gold" />
+                    </div>
+                    <p className="text-champagne">{item.title}</p>
                   </div>
-                  <p className="text-champagne">{item.title}</p>
-                </div>
+                </ParallaxSection>
               ))}
             </div>
           </div>
@@ -310,7 +326,7 @@ const Index = () => {
             ].map((service, index) => (
               <div 
                 key={index}
-                className="p-8 bg-muted/30 border border-gold/20 rounded-2xl hover:border-gold/50 transition-all animate-fade-in hover:transform hover:scale-105"
+                className="holographic-card neumorphic p-8 rounded-2xl hover:transform hover:scale-105 transition-all animate-fade-in"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="w-14 h-14 bg-gold/10 rounded-xl flex items-center justify-center mb-6">
@@ -358,7 +374,7 @@ const Index = () => {
             ].map((item, index) => (
               <div 
                 key={index}
-                className="relative p-10 bg-muted/30 border border-gold/20 rounded-2xl animate-fade-in"
+                className="relative neumorphic p-10 rounded-2xl animate-fade-in hover:transform hover:scale-105 transition-all"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
                 <div className="text-8xl font-light text-gold/10 absolute top-4 right-6">{item.step}</div>
@@ -464,6 +480,12 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      <PhilosophySection />
+
+      <InteractiveMap />
+
+      <AIGenerator />
 
       <section id="contact" className="py-24 px-6 lg:px-12 bg-gradient-to-b from-black to-muted/20">
         <div className="max-w-3xl mx-auto">
