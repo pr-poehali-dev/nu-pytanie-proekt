@@ -509,6 +509,30 @@ const Index = () => {
               </div>
 
               <div>
+                <label className="block text-sm font-light mb-3 text-champagne">Желаемая дата мероприятия</label>
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <Button
+                      variant="outline"
+                      className="w-full justify-start text-left font-light border-gold/30 hover:border-gold bg-black/50 text-champagne h-12"
+                    >
+                      <Icon name="Calendar" size={16} className="mr-2" />
+                      {date ? format(date, 'PPP', { locale: ru }) : 'Выберите дату'}
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-auto p-0 bg-muted border-gold/30">
+                    <Calendar
+                      mode="single"
+                      selected={date}
+                      onSelect={setDate}
+                      initialFocus
+                      locale={ru}
+                    />
+                  </PopoverContent>
+                </Popover>
+              </div>
+
+              <div>
                 <label className="block text-sm font-light mb-3 text-champagne">Расскажите о ваших пожеланиях</label>
                 <Textarea 
                   placeholder="Опишите ваше видение мероприятия, количество гостей, бюджет, особые пожелания..."
