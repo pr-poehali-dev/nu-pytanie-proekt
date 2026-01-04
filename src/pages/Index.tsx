@@ -111,11 +111,14 @@ const Index = () => {
               <span className="text-black font-bold text-xl">М</span>
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gold tracking-wide">Marico Events</h1>
-              <p className="text-[10px] text-champagne/60 tracking-widest uppercase">Марина Малиночка</p>
+              <h1 className="text-xl font-bold text-gold tracking-wide">Марина Малиночка</h1>
             </div>
           </Link>
           <div className="hidden lg:flex gap-10 items-center">
+            <a href="#about" className="text-sm tracking-wide hover:text-gold transition-all relative group">
+              Обо мне
+              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gold transition-all group-hover:w-full"></span>
+            </a>
             <a href="#services" className="text-sm tracking-wide hover:text-gold transition-all relative group">
               Услуги
               <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gold transition-all group-hover:w-full"></span>
@@ -124,13 +127,9 @@ const Index = () => {
               Как работаю
               <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gold transition-all group-hover:w-full"></span>
             </a>
-            <a href="#cases" className="text-sm tracking-wide hover:text-gold transition-all relative group">
-              Портфолио
-              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gold transition-all group-hover:w-full"></span>
-            </a>
             <a href="#contact">
               <Button className="bg-gold text-black hover:bg-champagne transition-all tracking-wide px-6">
-                Обсудить проект
+                Контакты
               </Button>
             </a>
           </div>
@@ -149,38 +148,38 @@ const Index = () => {
             <div className="space-y-10 animate-fade-in">
               <div className="inline-block">
                 <div className="px-5 py-2 border border-gold/30 rounded-full shimmer-effect animate-glow-pulse">
-                  <p className="text-xs tracking-[0.3em] text-champagne uppercase">С 2026 года — мой бренд</p>
+                  <p className="text-xs tracking-[0.3em] text-champagne uppercase">Частный организатор с 2026 года</p>
                 </div>
               </div>
               
               <div>
                 <h2 className="text-6xl lg:text-7xl font-light leading-[1.1] text-champagne mb-6">
                   <span className="relative inline-block">
-                    Ваше событие —
+                    Ваше событие.
                     <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-gradient-to-r from-gold via-champagne to-transparent"></span>
                   </span>
                   <br />
                   <span className="text-gold font-normal relative inline-block">
-                    Моя ответственность
+                    Ваши условия.
                     <span className="absolute inset-0 blur-2xl bg-gold/20"></span>
                   </span>
                 </h2>
                 
                 <p className="text-xl text-champagne/80 max-w-xl leading-relaxed">
-                  Организую премиум-события <span className="text-gold">от идеи до реализации</span>. 
-                  Всегда на вашей стороне — защищаю интересы, контролирую бюджет, создаю безупречные мероприятия.
+                  Частный организатор мероприятий с 2026 года<br/>
+                  <span className="text-gold">Всегда на вашей стороне</span>
                 </p>
               </div>
               
               <div className="flex gap-4">
                 <a href="#contact">
                   <Button size="lg" className="bg-gold text-black hover:bg-champagne text-base px-8 h-14">
-                    Начать диалог
+                    Обсудить мероприятие
                   </Button>
                 </a>
-                <a href="#services">
+                <a href="#about">
                   <Button size="lg" variant="outline" className="border-gold/30 text-champagne hover:bg-gold/5 text-base px-8 h-14">
-                    Мои услуги
+                    Обо мне
                   </Button>
                 </a>
               </div>
@@ -231,20 +230,84 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="services" className="py-24 px-6 lg:px-12 bg-gradient-to-b from-black to-muted/20">
+      <section id="about" className="py-24 px-6 lg:px-12 bg-gradient-to-b from-black to-muted/20">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20 animate-fade-in max-w-3xl mx-auto">
-            <p className="text-gold text-sm tracking-[0.3em] uppercase mb-4">Для кого я работаю</p>
-            <h3 className="text-5xl lg:text-6xl font-light text-champagne mb-6">
-              Для тех, кто <span className="text-gold">ценит время</span> и <span className="text-gold">качество</span>
+          <div className="text-center mb-16 animate-fade-in max-w-4xl mx-auto">
+            <p className="text-gold text-sm tracking-[0.3em] uppercase mb-4">Почему я?</p>
+            <h3 className="text-5xl lg:text-6xl font-light text-champagne mb-8">
+              Марина Малиночка
             </h3>
-            <p className="text-xl text-champagne/70">
-              Вы хотите безупречное событие, но не хотите погружаться в рутину? Я — ваше решение.
+            <div className="text-left space-y-6 text-champagne/80 text-lg leading-relaxed">
+              <p>
+                Я открыла свой проект в 2026 году как частный специалист по организации мероприятий. Моя миссия — создавать события, которые идеально соответствуют вашим желаниям и возможностям.
+              </p>
+              <p>
+                Моя главная особенность: <span className="text-gold font-normal">я всегда на стороне клиента</span>. Я не навязываю партнеров и подрядчиков, а подбираю под ваш запрос и бюджет именно то, что нужно именно вам.
+              </p>
+            </div>
+          </div>
+
+          <div className="mb-20">
+            <h4 className="text-3xl font-light text-champagne mb-8 text-center">Гибкий подход</h4>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { title: 'Полная организация с нуля', icon: 'Sparkles' },
+                { title: 'Помощь на определенном этапе', icon: 'Target' },
+                { title: 'Координация в день события', icon: 'CalendarCheck' },
+                { title: 'Консультация и подбор подрядчиков', icon: 'Users' }
+              ].map((item, index) => (
+                <div key={index} className="p-6 bg-muted/30 border border-gold/20 rounded-2xl text-center">
+                  <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                    <Icon name={item.icon} size={24} className="text-gold" />
+                  </div>
+                  <p className="text-champagne">{item.title}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-br from-purple-600/20 via-blue-600/20 to-purple-600/20 border-2 border-purple-500/40 rounded-3xl p-12 mb-20">
+            <h4 className="text-3xl font-light text-champagne mb-6 text-center">
+              Собственная база проверенных партнёров
+            </h4>
+            <p className="text-xl text-champagne/90 max-w-4xl mx-auto leading-relaxed text-center">
+              За время работы я собрала личную базу надежных подрядчиков из открытых источников. 
+              Это не реклама — это моя кураторская подборка лучших специалистов. 
+              <span className="text-gold font-normal block mt-4">После подписания договора вы получите полный доступ к этой базе.</span>
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-            {services.map((service, index) => (
+          <div className="text-center">
+            <h4 className="text-2xl font-light text-champagne mb-6">География работы</h4>
+            <div className="flex flex-wrap gap-4 justify-center">
+              {['Москва', 'Санкт-Петербург', 'Сочи', 'Крым', 'Ваш город'].map((city, index) => (
+                <span key={index} className="px-6 py-3 bg-gold/10 border border-gold/30 rounded-full text-champagne">
+                  {city}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" className="py-24 px-6 lg:px-12">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20 animate-fade-in max-w-3xl mx-auto">
+            <p className="text-gold text-sm tracking-[0.3em] uppercase mb-4">Что я организую</p>
+            <h3 className="text-5xl lg:text-6xl font-light text-champagne mb-6">
+              Любые форматы <span className="text-gold">событий</span>
+            </h3>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              { icon: 'Cake', title: 'Дни рождения', description: 'Камерные и масштабные празднования любой сложности' },
+              { icon: 'Heart', title: 'Свадьбы', description: 'Организация вашего особенного дня от А до Я' },
+              { icon: 'Briefcase', title: 'Корпоративы', description: 'Деловые и неформальные мероприятия для компаний' },
+              { icon: 'PartyPopper', title: 'Частные события', description: 'Юбилеи, детские праздники, семейные торжества' },
+              { icon: 'Sparkle', title: 'Камерные встречи', description: 'Элегантные мероприятия в узком кругу' },
+              { icon: 'Lightbulb', title: 'Нестандартные форматы', description: 'Воплощаем самые смелые идеи' }
+            ].map((service, index) => (
               <div 
                 key={index}
                 className="p-8 bg-muted/30 border border-gold/20 rounded-2xl hover:border-gold/50 transition-all animate-fade-in hover:transform hover:scale-105"
@@ -258,45 +321,39 @@ const Index = () => {
               </div>
             ))}
           </div>
-
-          <div className="bg-gradient-to-r from-gold/10 via-champagne/5 to-gold/10 border border-gold/30 rounded-3xl p-12 text-center">
-            <h4 className="text-3xl font-light text-champagne mb-4">
-              Почему выбирают меня?
-            </h4>
-            <p className="text-xl text-champagne/80 max-w-3xl mx-auto leading-relaxed">
-              Я не просто организатор — я <span className="text-gold font-normal">ваш адвокат</span> в мире event-индустрии. 
-              Защищаю ваш бюджет в переговорах, контролирую каждого подрядчика, решаю проблемы до того, 
-              как вы о них узнаете. Вы получаете не стресс, а <span className="text-gold font-normal">удовольствие от процесса</span>.
-            </p>
-          </div>
         </div>
       </section>
 
       <section id="how" className="py-24 px-6 lg:px-12">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20 animate-fade-in max-w-3xl mx-auto">
-            <p className="text-gold text-sm tracking-[0.3em] uppercase mb-4">Как я работаю</p>
+            <p className="text-gold text-sm tracking-[0.3em] uppercase mb-4">Как мы работаем</p>
             <h3 className="text-5xl lg:text-6xl font-light text-champagne mb-6">
-              Прозрачный <span className="text-gold">процесс</span> от А до Я
+              Простой и понятный <span className="text-gold">процесс</span>
             </h3>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-4 gap-8">
             {[
               {
                 step: '01',
-                title: 'Знакомство и концепция',
-                description: 'Созваниваемся, обсуждаем ваше событие, бюджет и ожидания. Я предлагаю идеи и формирую концепцию.'
+                title: 'Знакомство',
+                description: 'Обсуждаем ваши пожелания, бюджет и видение мероприятия'
               },
               {
                 step: '02',
-                title: 'Подбор и контроль',
-                description: 'Нахожу лучшие локации и подрядчиков. Веду переговоры, защищаю ваш бюджет, заключаю договоры.'
+                title: 'Подбор решений',
+                description: 'Формирую предложения из моей базы под ваши задачи'
               },
               {
                 step: '03',
-                title: 'Реализация мечты',
-                description: 'Координирую всех в день Х, решаю форс-мажоры. Вы наслаждаетесь событием, я контролирую процесс.'
+                title: 'Договор',
+                description: 'Подписываем договор, вы получаете доступ к базе партнеров'
+              },
+              {
+                step: '04',
+                title: 'Реализация',
+                description: 'Беру на себя все вопросы по организации и координации'
               }
             ].map((item, index) => (
               <div 
@@ -413,83 +470,51 @@ const Index = () => {
           <div className="text-center mb-16 animate-fade-in">
             <p className="text-gold text-sm tracking-[0.3em] uppercase mb-4">Контакты</p>
             <h3 className="text-5xl lg:text-6xl font-light text-champagne mb-6">
-              Давайте <span className="text-gold">обсудим</span> ваше событие
+              Обсудим ваше <span className="text-gold">мероприятие?</span>
             </h3>
-            <p className="text-xl text-champagne/70">
-              Заполните форму — я свяжусь с вами в течение 24 часов
-            </p>
           </div>
 
           <div className="p-10 lg:p-12 bg-muted/30 border border-gold/20 rounded-3xl animate-slide-up">
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-light mb-3 text-champagne">Ваше имя *</label>
-                  <Input 
-                    placeholder="Как к вам обращаться?"
-                    value={formData.name}
-                    onChange={(e) => setFormData({...formData, name: e.target.value})}
-                    className="bg-black/50 border-gold/30 focus:border-gold text-champagne h-12"
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-light mb-3 text-champagne">Email *</label>
-                  <Input 
-                    type="email"
-                    placeholder="your@email.com"
-                    value={formData.email}
-                    onChange={(e) => setFormData({...formData, email: e.target.value})}
-                    className="bg-black/50 border-gold/30 focus:border-gold text-champagne h-12"
-                    required
-                  />
-                </div>
-              </div>
-
               <div>
-                <label className="block text-sm font-light mb-3 text-champagne">Телефон *</label>
+                <label className="block text-sm font-light mb-3 text-champagne">Ваше имя</label>
                 <Input 
-                  type="tel"
-                  placeholder="+7 (___) ___-__-__"
-                  value={formData.phone}
-                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                  placeholder="Как к вам обращаться?"
+                  value={formData.name}
+                  onChange={(e) => setFormData({...formData, name: e.target.value})}
                   className="bg-black/50 border-gold/30 focus:border-gold text-champagne h-12"
-                  required
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-light mb-3 text-champagne">Дата события (ориентировочно)</label>
-                <Popover>
-                  <PopoverTrigger asChild>
-                    <Button
-                      variant="outline"
-                      className="w-full justify-start text-left font-light border-gold/30 hover:border-gold bg-black/50 text-champagne h-12"
-                    >
-                      <Icon name="Calendar" size={16} className="mr-2" />
-                      {date ? format(date, 'PPP', { locale: ru }) : 'Выберите дату'}
-                    </Button>
-                  </PopoverTrigger>
-                  <PopoverContent className="w-auto p-0 bg-muted border-gold/30">
-                    <Calendar
-                      mode="single"
-                      selected={date}
-                      onSelect={setDate}
-                      initialFocus
-                      locale={ru}
-                    />
-                  </PopoverContent>
-                </Popover>
+                <label className="block text-sm font-light mb-3 text-champagne">Телефон или Telegram</label>
+                <Input 
+                  type="text"
+                  placeholder="+7 (___) ___-__-__ или @telegram"
+                  value={formData.phone}
+                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                  className="bg-black/50 border-gold/30 focus:border-gold text-champagne h-12"
+                />
               </div>
 
               <div>
-                <label className="block text-sm font-light mb-3 text-champagne">Расскажите о событии *</label>
+                <label className="block text-sm font-light mb-3 text-champagne">Тип мероприятия</label>
+                <Input 
+                  type="text"
+                  placeholder="Например: день рождения, свадьба"
+                  value={formData.email}
+                  onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  className="bg-black/50 border-gold/30 focus:border-gold text-champagne h-12"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-light mb-3 text-champagne">Расскажите о ваших пожеланиях</label>
                 <Textarea 
-                  placeholder="Какое событие планируете? Сколько гостей? Какая помощь нужна?"
+                  placeholder="Опишите ваше видение мероприятия, количество гостей, бюджет, особые пожелания..."
                   value={formData.message}
                   onChange={(e) => setFormData({...formData, message: e.target.value})}
-                  className="bg-black/50 border-gold/30 focus:border-gold text-champagne min-h-32"
-                  required
+                  className="bg-black/50 border-gold/30 focus:border-gold text-champagne min-h-40"
                 />
               </div>
 
@@ -498,7 +523,7 @@ const Index = () => {
                 size="lg" 
                 className="w-full bg-gold text-black hover:bg-champagne text-base h-14 tracking-wide font-medium"
               >
-                Отправить запрос
+                Отправить заявку
               </Button>
               
               <p className="text-xs text-center text-champagne/50">
@@ -518,12 +543,11 @@ const Index = () => {
                   <span className="text-black font-bold text-xl">М</span>
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-gold">Marico Events</h4>
-                  <p className="text-[10px] text-champagne/60 tracking-widest uppercase">Марина Малиночка</p>
+                  <h4 className="text-xl font-bold text-gold">Марина Малиночка</h4>
                 </div>
               </div>
               <p className="text-champagne/60 leading-relaxed max-w-md">
-                Премиум-организация событий по всей России. Всегда на вашей стороне — от идеи до реализации.
+                Частный организатор мероприятий с 2026 года. Всегда на вашей стороне.
               </p>
             </div>
 
@@ -555,7 +579,10 @@ const Index = () => {
 
           <div className="border-t border-gold/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-champagne/40">
-              © 2026 Marico Events. Марина Малиночка — Организация премиум-событий
+              © 2026 Марина Малиночка. Частный организатор мероприятий
+            </p>
+            <p className="text-xs text-champagne/30">
+              Москва • Санкт-Петербург • Сочи • Крым
             </p>
             <div className="flex gap-6">
               <a href="#" className="text-champagne/40 hover:text-gold transition-colors">
