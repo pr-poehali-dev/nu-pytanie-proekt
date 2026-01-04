@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Главная страница -->
+  <url>
+    <loc>https://nu-pytanie-proekt.poehali.dev/</loc>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://cdn.poehali.dev/projects/de9015d2-43e5-4979-bf59-270d4334d15d/files/og-image-1767468577122.jpg</image:loc>
+      <image:title>Marico Events — премиум организация событий</image:title>
+    </image:image>
+  </url>
+  
+  <!-- Кейс: Свадьба на берегу моря в Сочи -->
+  <url>
+    <loc>https://nu-pytanie-proekt.poehali.dev/case/sochi-wedding</loc>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://cdn.poehali.dev/projects/de9015d2-43e5-4979-bf59-270d4334d15d/files/7dfd9622-034e-41ba-9ee1-5873cbaace8c.jpg</image:loc>
+      <image:title>Свадьба на берегу моря в Сочи — 120 гостей</image:title>
+    </image:image>
+  </url>
+  
+  <!-- Кейс: Корпоратив премиум-класса в Москве -->
+  <url>
+    <loc>https://nu-pytanie-proekt.poehali.dev/case/moscow-corporate</loc>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://cdn.poehali.dev/projects/de9015d2-43e5-4979-bf59-270d4334d15d/files/b7b648fd-f54f-487f-b94a-5b6d5ecad179.jpg</image:loc>
+      <image:title>Корпоратив премиум-класса в Москва-Сити — 250 гостей</image:title>
+    </image:image>
+  </url>
+  
+  <!-- Кейс: Юбилей в исторической усадьбе СПб -->
+  <url>
+    <loc>https://nu-pytanie-proekt.poehali.dev/case/spb-anniversary</loc>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://cdn.poehali.dev/projects/de9015d2-43e5-4979-bf59-270d4334d15d/files/16676814-acdc-4d68-ac49-4f273e16c44d.jpg</image:loc>
+      <image:title>Юбилей в исторической усадьбе — 80 гостей</image:title>
+    </image:image>
+  </url>
+  
+  <!-- Кейс: Свадьба в горах Крыма -->
+  <url>
+    <loc>https://nu-pytanie-proekt.poehali.dev/case/crimea-mountain</loc>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://cdn.poehali.dev/projects/de9015d2-43e5-4979-bf59-270d4334d15d/files/c16418a8-e802-4ecf-8d93-d9eb83527d58.jpg</image:loc>
+      <image:title>Свадьба в горах Крыма на высоте 1200 метров</image:title>
+    </image:image>
+  </url>
+  
+</urlset>
