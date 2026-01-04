@@ -270,14 +270,12 @@ const Index = () => {
                 { title: 'Координация в день события', icon: 'CalendarCheck' },
                 { title: 'Консультация и подбор подрядчиков', icon: 'Users' }
               ].map((item, index) => (
-                <ParallaxSection key={index} speed={0.1 + index * 0.05}>
-                  <div className="neumorphic p-6 rounded-2xl text-center hover:transform hover:scale-105 transition-all">
-                    <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center mb-4 mx-auto">
-                      <Icon name={item.icon} size={24} className="text-gold" />
-                    </div>
-                    <p className="text-champagne">{item.title}</p>
+                <div key={index} className="neumorphic p-6 rounded-2xl text-center hover:transform hover:scale-105 transition-all">
+                  <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                    <Icon name={item.icon} size={24} className="text-gold" />
                   </div>
-                </ParallaxSection>
+                  <p className="text-champagne">{item.title}</p>
+                </div>
               ))}
             </div>
           </div>
