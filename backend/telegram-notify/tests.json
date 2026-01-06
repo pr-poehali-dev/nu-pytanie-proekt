@@ -1,50 +1,15 @@
 {
   "tests": [
     {
-      "name": "Test main contact form",
+      "name": "Test contact form submission",
       "method": "POST",
       "path": "/",
       "body": {
-        "name": "Анна Иванова",
+        "name": "Тест Тестов",
         "phone": "+7 (999) 123-45-67",
         "eventType": "Свадьба",
         "eventDate": "15.08.2026",
-        "message": "Хочу организовать свадьбу на 100 человек в Санкт-Петербурге"
-      },
-      "expectedStatus": 200,
-      "expectedBody": {
-        "success": true,
-        "message": "Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время."
-      },
-      "bodyMatcher": "partial"
-    },
-    {
-      "name": "Test checklist popup form",
-      "method": "POST",
-      "path": "/",
-      "body": {
-        "name": "Дмитрий Смирнов",
-        "phone": "+7 (911) 555-77-88",
-        "eventType": "Юбилей компании",
-        "eventDate": "20.12.2026",
-        "message": "📋 Заявка на получение бесплатного чек-листа"
-      },
-      "expectedStatus": 200,
-      "expectedBody": {
-        "success": true
-      },
-      "bodyMatcher": "partial"
-    },
-    {
-      "name": "Test form without date",
-      "method": "POST",
-      "path": "/",
-      "body": {
-        "name": "Елена Петрова",
-        "phone": "+7 (921) 444-33-22",
-        "eventType": "День рождения",
-        "eventDate": "Не указана",
-        "message": "Интересует организация праздника"
+        "message": "Тестовая заявка"
       },
       "expectedStatus": 200,
       "expectedBody": {

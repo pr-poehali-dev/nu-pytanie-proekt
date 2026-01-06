@@ -51,10 +51,8 @@ def handler(event: dict, context) -> dict:
 💬 <b>Сообщение:</b>
 {message}"""
         
-        bot_token = os.environ.get('TELEGRAM_BOT_TOKEN')
-        chat_id = os.environ.get('TELEGRAM_CHAT_ID')
-        
-        print(f"Bot token exists: {bool(bot_token)}, Chat ID exists: {bool(chat_id)}")
+        bot_token = os.environ.get('TELEGRAM_BOT_TOKEN', '').strip()
+        chat_id = os.environ.get('TELEGRAM_CHAT_ID', '').strip()
         
         if bot_token and chat_id:
             try:
@@ -69,9 +67,11 @@ def handler(event: dict, context) -> dict:
                 req = urllib.request.Request(telegram_url, data=data, method='POST')
                 with urllib.request.urlopen(req, timeout=5) as response:
                     result = response.read().decode('utf-8')
-                    print(f"Telegram API response: {result}")
+                    print(f"Telegram SUCCESS: {result}")
             except Exception as e:
-                print(f"Error sending to Telegram: {str(e)}")
+                print(f"Telegram ERROR: {str(e)}")
+        else:
+            print(f"Missing credentials: token={bool(bot_token)}, chat={bool(chat_id)}")
         
         return {
             'statusCode': 200,
@@ -87,6 +87,7 @@ def handler(event: dict, context) -> dict:
         }
         
     except Exception as e:
+        print(f"Handler ERROR: {str(e)}")
         return {
             'statusCode': 500,
             'headers': {
