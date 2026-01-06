@@ -131,7 +131,7 @@ const ChecklistPopup = () => {
                   {date ? format(date, 'PPP', { locale: ru }) : 'Выберите дату'}
                 </Button>
               </PopoverTrigger>
-              <PopoverContent className="w-auto p-0 bg-black border-gold/30 z-[150]" align="center" side="top">
+              <PopoverContent className="w-auto p-0 bg-black border-gold/30 z-[250]" align="center" side="top">
                 <Calendar
                   mode="single"
                   selected={date}
