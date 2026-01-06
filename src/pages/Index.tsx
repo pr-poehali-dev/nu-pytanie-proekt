@@ -85,24 +85,27 @@ const Index = () => {
       return;
     }
 
+    const BOT_TOKEN = '8443132928:AAGhtohJD1jmhIJ5OGx8EZhmckymbafpTUQ';
+    const CHAT_ID = '706911993';
+
+    const telegramMessage = `🎉 <b>Новая заявка с сайта!</b>\n\n👤 <b>Имя:</b> ${formData.name}\n📱 <b>Телефон:</b> ${formData.phone}\n🎭 <b>Тип события:</b> ${formData.email || 'Не указано'}\n📅 <b>Дата:</b> ${date ? format(date, 'dd.MM.yyyy') : 'Не указана'}\n\n💬 <b>Сообщение:</b>\n${formData.message || 'Нет сообщения'}`;
+
     try {
-      const response = await fetch('https://functions.poehali.dev/e3a1434e-5331-47aa-854a-b2bf47e0287f', {
+      const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          name: formData.name,
-          phone: formData.phone,
-          eventType: formData.email || 'Не указано',
-          eventDate: date ? format(date, 'dd.MM.yyyy') : 'Не указана',
-          message: formData.message || 'Заявка с основной формы сайта'
+          chat_id: CHAT_ID,
+          text: telegramMessage,
+          parse_mode: 'HTML'
         })
       });
 
       const result = await response.json();
 
-      if (result.success) {
+      if (result.ok) {
         alert('✅ Спасибо за заявку! Я свяжусь с вами в ближайшее время и обсудим все детали вашего события. До скорой встречи!');
         setFormData({ name: '', email: '', phone: '', message: '' });
         setDate(undefined);

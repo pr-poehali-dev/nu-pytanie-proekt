@@ -38,24 +38,27 @@ const ChecklistPopup = () => {
       return;
     }
 
+    const BOT_TOKEN = '8443132928:AAGhtohJD1jmhIJ5OGx8EZhmckymbafpTUQ';
+    const CHAT_ID = '706911993';
+
+    const telegramMessage = `🎁 <b>Запрос чек-листа!</b>\n\n👤 <b>Имя:</b> ${formData.name}\n📱 <b>Телефон:</b> ${formData.phone}\n🎭 <b>Тип события:</b> ${formData.eventType}\n📅 <b>Дата:</b> ${date ? format(date, 'dd.MM.yyyy') : 'Не указана'}\n\n📋 Клиент хочет получить персональный чек-лист`;
+
     try {
-      const response = await fetch('https://functions.poehali.dev/e3a1434e-5331-47aa-854a-b2bf47e0287f', {
+      const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          name: formData.name,
-          phone: formData.phone,
-          eventType: formData.eventType,
-          eventDate: date ? format(date, 'dd.MM.yyyy') : 'Не указана',
-          message: '📋 Заявка на получение бесплатного чек-листа'
+          chat_id: CHAT_ID,
+          text: telegramMessage,
+          parse_mode: 'HTML'
         })
       });
 
       const result = await response.json();
 
-      if (result.success) {
+      if (result.ok) {
         alert('✅ Спасибо за интерес! Я свяжусь с вами в ближайшее время и вышлю персональный чек-лист для вашего события. До скорой встречи!');
         setOpen(false);
         setFormData({ name: '', phone: '', eventType: '' });

@@ -1,15 +1,15 @@
 {
   "tests": [
     {
-      "name": "Test contact form submission",
+      "name": "Test form submission",
       "method": "POST",
       "path": "/",
       "body": {
-        "name": "Тест Тестов",
+        "name": "Тестовый клиент",
         "phone": "+7 (999) 123-45-67",
         "eventType": "Свадьба",
-        "eventDate": "15.08.2026",
-        "message": "Тестовая заявка"
+        "eventDate": "01.07.2026",
+        "message": "Тестовая заявка с сайта"
       },
       "expectedStatus": 200,
       "expectedBody": {
