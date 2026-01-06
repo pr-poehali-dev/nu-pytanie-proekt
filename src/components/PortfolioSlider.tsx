@@ -24,7 +24,7 @@ const PortfolioSlider = () => {
       title: 'Свадьба в загородной усадьбе',
       subtitle: 'Классическое торжество',
       location: 'Московская область, загородный комплекс',
-      budget: '980 000 ₽',
+      budget: '',
       guests: 70,
       image: 'https://cdn.poehali.dev/projects/de9015d2-43e5-4979-bf59-270d4334d15d/files/c51fe9a0-63e0-405e-bf68-360de2267ed0.jpg',
       category: 'Свадьба',
@@ -35,7 +35,7 @@ const PortfolioSlider = () => {
       title: 'Корпоратив IT-компании',
       subtitle: 'Новогоднее мероприятие',
       location: 'Москва, лофт-пространство',
-      budget: '720 000 ₽',
+      budget: '',
       guests: 150,
       image: 'https://cdn.poehali.dev/projects/de9015d2-43e5-4979-bf59-270d4334d15d/files/df7887b0-d57c-48b0-9bc7-c05960ef0ecc.jpg',
       category: 'Корпоратив',
@@ -46,7 +46,7 @@ const PortfolioSlider = () => {
       title: 'Юбилей в ресторане',
       subtitle: 'Празднование 50-летия',
       location: 'Санкт-Петербург, классический ресторан',
-      budget: '380 000 ₽',
+      budget: '',
       guests: 50,
       image: 'https://cdn.poehali.dev/projects/de9015d2-43e5-4979-bf59-270d4334d15d/files/9e099256-58fc-4ae0-83fe-35ffba161e74.jpg',
       category: 'Юбилей',
@@ -57,7 +57,7 @@ const PortfolioSlider = () => {
       title: 'Свадьба на побережье',
       subtitle: 'Церемония у моря',
       location: 'Сочи, пляжная зона',
-      budget: '650 000 ₽',
+      budget: '',
       guests: 45,
       image: 'https://cdn.poehali.dev/projects/de9015d2-43e5-4979-bf59-270d4334d15d/files/b721589b-e086-4bbf-8c4f-e2840f521ca6.jpg',
       category: 'Свадьба',
@@ -68,7 +68,7 @@ const PortfolioSlider = () => {
       title: 'Предложение на крыше',
       subtitle: 'Романтический вечер',
       location: 'Москва, панорамная площадка',
-      budget: '120 000 ₽',
+      budget: '',
       guests: 2,
       image: 'https://cdn.poehali.dev/projects/de9015d2-43e5-4979-bf59-270d4334d15d/files/556d7849-48bf-49a2-9ee0-7ffe5b156bf5.jpg',
       category: 'Романтика',
@@ -79,7 +79,7 @@ const PortfolioSlider = () => {
       title: 'Детский день рождения',
       subtitle: 'Тематическая вечеринка',
       location: 'Москва, детское пространство',
-      budget: '95 000 ₽',
+      budget: '',
       guests: 20,
       image: 'https://cdn.poehali.dev/projects/de9015d2-43e5-4979-bf59-270d4334d15d/files/baf04995-1a05-4f19-88ab-c0860654b0d5.jpg',
       category: 'Детский праздник',
@@ -147,16 +147,11 @@ const PortfolioSlider = () => {
                     {currentCase.subtitle}
                   </p>
 
-                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-6 mb-6 md:mb-8">
+                  <div className="grid grid-cols-3 gap-3 md:gap-4 lg:gap-6 mb-6 md:mb-8">
                     <div className="bg-black/50 backdrop-blur-sm border border-gold/20 rounded-lg md:rounded-xl p-3 md:p-4">
                       <Icon name="MapPin" size={16} className="text-gold mb-1 md:mb-2 md:w-5 md:h-5" />
                       <p className="text-champagne/60 text-[10px] md:text-xs mb-1">Локация</p>
                       <p className="text-champagne text-xs md:text-sm font-medium line-clamp-2">{currentCase.location}</p>
-                    </div>
-                    <div className="bg-black/50 backdrop-blur-sm border border-gold/20 rounded-lg md:rounded-xl p-3 md:p-4">
-                      <Icon name="Wallet" size={16} className="text-gold mb-1 md:mb-2 md:w-5 md:h-5" />
-                      <p className="text-champagne/60 text-[10px] md:text-xs mb-1">Бюджет</p>
-                      <p className="text-champagne text-xs md:text-sm font-medium">{currentCase.budget}</p>
                     </div>
                     <div className="bg-black/50 backdrop-blur-sm border border-gold/20 rounded-lg md:rounded-xl p-3 md:p-4">
                       <Icon name="Users" size={16} className="text-gold mb-1 md:mb-2 md:w-5 md:h-5" />

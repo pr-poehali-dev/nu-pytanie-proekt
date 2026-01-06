@@ -607,11 +607,11 @@ const Index = () => {
         </div>
       </section>
 
-      <PhilosophySection />
+      <AIGenerator />
 
       <InteractiveMap />
 
-      <AIGenerator />
+      <PhilosophySection />
 
       <section id="contact" className="py-24 px-6 lg:px-12 bg-gradient-to-b from-black to-muted/20">
         <div className="max-w-3xl mx-auto">

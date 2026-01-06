@@ -3,7 +3,6 @@ export interface CaseData {
   title: string;
   location: string;
   guests: number;
-  budget: string;
   date: string;
   heroImage: string;
   images: string[];
@@ -27,7 +26,6 @@ export const cases: CaseData[] = [
     title: 'Свадьба на берегу моря',
     location: 'Сочи',
     guests: 120,
-    budget: '2 500 000 ₽',
     date: 'Август 2025',
     heroImage: 'https://cdn.poehali.dev/projects/de9015d2-43e5-4979-bf59-270d4334d15d/files/7dfd9622-034e-41ba-9ee1-5873cbaace8c.jpg',
     images: [
@@ -80,7 +78,7 @@ export const cases: CaseData[] = [
       'Пара рекомендовала меня 8 знакомым',
       'Фотографии набрали тысячи лайков',
       'Идеальная погода в день события',
-      'Укладка в бюджет с запасом 50 000 ₽'
+      'Эффективное управление бюджетом'
     ],
     testimonial: {
       name: 'Анастасия и Дмитрий',
@@ -92,7 +90,6 @@ export const cases: CaseData[] = [
     title: 'Корпоратив премиум-класса',
     location: 'Москва',
     guests: 250,
-    budget: '4 500 000 ₽',
     date: 'Декабрь 2025',
     heroImage: 'https://cdn.poehali.dev/projects/de9015d2-43e5-4979-bf59-270d4334d15d/files/b7b648fd-f54f-487f-b94a-5b6d5ecad179.jpg',
     images: [

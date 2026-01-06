@@ -62,10 +62,6 @@ const CaseDetailHero = ({ caseData }: CaseDetailHeroProps) => {
                   <Icon name="Calendar" size={20} className="text-gold" />
                   <span className="text-champagne">{caseData.date}</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Icon name="DollarSign" size={20} className="text-gold" />
-                  <span className="text-champagne">{caseData.budget}</span>
-                </div>
               </div>
             </div>
           </div>
